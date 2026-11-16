@@ -154,5 +154,6 @@ window.I18N_EN = {
   "Beschriftungsfenster": "Label window",
   "Nennstrom groß anzeigen": "Show rated current large",
   "Vorschau": "Preview",
-  "Die Einstellungen gelten für Reiheneinbaugeräte ohne eigenes Bild. Mit „Standard nach Art“ zeichnet die App wie bisher.": "These settings apply to modular devices without an image. With “default for the type” the app draws as before."
+  "Die Einstellungen gelten für Reiheneinbaugeräte ohne eigenes Bild. Mit „Standard nach Art“ zeichnet die App wie bisher.": "These settings apply to modular devices without an image. With “default for the type” the app draws as before.",
+  "Projekt auf GitHub": "Project on GitHub"
 };

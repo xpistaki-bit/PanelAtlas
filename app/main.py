@@ -23,6 +23,7 @@ from PIL import Image
 from . import backup, catalog_io, export, render
 from .checks import run_checks, stats
 from .render import render_svg
+from .version import REPO_URL, VERSION
 
 BASE = pathlib.Path(__file__).resolve().parent
 DATA = pathlib.Path(os.environ.get("VERTEILER_DATA", BASE.parent / "data"))
@@ -174,7 +175,8 @@ def normalize(cfg):
 @app.get("/api/state")
 def state(request: Request):
     with db() as c:
-        return dict(admin_locked=bool(get_setting(c, "admin_pw")), admin=granted(c, request, 0) or not get_setting(c, "admin_pw"))
+        return dict(admin_locked=bool(get_setting(c, "admin_pw")), admin=granted(c, request, 0) or not get_setting(c, "admin_pw"),
+                    version=VERSION, repo=REPO_URL)
 
 
 @app.post("/api/admin/login")
@@ -719,7 +721,20 @@ app.mount("/media", StaticFiles(directory=MEDIA), name="media")
 
 @app.get("/")
 def index():
-    return FileResponse(BASE / "static" / "index.html", headers={"Cache-Control": "no-cache"})
+    # Versionsnummer an CSS/JS hängen: nach einem Update lädt der Browser die neuen Dateien statt der zwischengespeicherten.
+    html = (BASE / "static" / "index.html").read_text(encoding="utf-8")
+    for f in ("style.css", "i18n.js", "app.js"):
+        html = html.replace(f'"/{f}"', f'"/{f}?v={VERSION}"')
+    return Response(html, media_type="text/html; charset=utf-8", headers={"Cache-Control": "no-cache"})
 
 
-app.mount("/", StaticFiles(directory=BASE / "static"), name="static")
+class NoCacheStatic(StaticFiles):
+    """Statische Dateien: Browser muss vor Verwendung nachfragen (ETag), sonst zeigt er nach Updates alte Dateien."""
+
+    async def get_response(self, path, scope):
+        resp = await super().get_response(path, scope)
+        resp.headers["Cache-Control"] = "no-cache"
+        return resp
+
+
+app.mount("/", NoCacheStatic(directory=BASE / "static"), name="static")

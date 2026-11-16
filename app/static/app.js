@@ -55,9 +55,12 @@ function dialog(title, html, { ok = t('Speichern'), onOk, onOpen, wide } = {}) {
 const fd = f => Object.fromEntries(new FormData(f).entries());
 function crumbs(parts) { $('#crumbs').innerHTML = parts.map(([txt, href]) => href ? `<a href="${href}">${h(txt)}</a>` : h(txt)).join(' › '); }
 function teStr(mm) { const n = mm / TE; return Math.abs(n * 2 - Math.round(n * 2)) < 0.02 ? num(Math.round(n * 2) / 2) + ' ' + t('TE') : num(mm) + ' mm'; }
+let META = { version: '', repo: 'https://github.com/xpistaki-bit/PanelAtlas' };
+fetch('/api/state').then(r => r.json()).then(j => { META = { ...META, ...j }; drawHeader(); if (location.hash.replace(/^#\/?/, '') === '') route(); }).catch(() => { });
+const ghIcon = '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" fill="currentColor"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/></svg>';
 function drawHeader() {
   document.documentElement.lang = LANG;
-  $('#nav').innerHTML = `<a href="#/">${t('Profile')}</a><a href="#/katalog">${t('Katalog')}</a><a href="#/einstellungen">${t('Einstellungen')}</a>
+  $('#nav').innerHTML = `<a class="gh" href="${h(META.repo)}" target="_blank" rel="noopener" title="${t('Projekt auf GitHub')}">${ghIcon}${META.version ? 'v' + h(META.version) : 'GitHub'}</a><a href="#/">${t('Profile')}</a><a href="#/katalog">${t('Katalog')}</a><a href="#/einstellungen">${t('Einstellungen')}</a>
     <span class="lang" role="group" aria-label="Sprache / Language"><button data-l="de" class="${LANG === 'de' ? 'on' : ''}">DE</button><button data-l="en" class="${LANG === 'en' ? 'on' : ''}">EN</button></span>`;
   $$('#nav [data-l]').forEach(b => b.onclick = () => { LANG = b.dataset.l; localStorage.setItem('vs_lang', LANG); drawHeader(); route(); });
 }
@@ -109,7 +112,8 @@ async function viewProfiles() {
     <div class="heropanel"><h2>${t('Profile')}</h2>
     <div class="cards">${list.map(p => `<button class="card" data-id="${p.id}"><b>${p.locked ? '🔒 ' : ''}${h(p.name)}</b><small>${p.configs === 1 ? t('1 Konfiguration') : t('{n} Konfigurationen', { n: p.configs })}</small></button>`).join('')}
     <button class="card new" id="newp">${t('+ Neues Profil')}</button></div>
-    <p class="hint">${t('Ein Profil bündelt Verteiler-Konfigurationen, zum Beispiel pro Haus oder Kunde. Ein Passwort ist optional.')}</p></div></div>`;
+    <p class="hint">${t('Ein Profil bündelt Verteiler-Konfigurationen, zum Beispiel pro Haus oder Kunde. Ein Passwort ist optional.')}</p></div></div>
+    <footer class="herofoot">PanelAtlas ${META.version ? 'v' + h(META.version) : ''} · <a href="${h(META.repo)}" target="_blank" rel="noopener">${ghIcon} ${h(META.repo.replace(/^https?:\/\//, ''))}</a></footer>`;
   $$('.card[data-id]').forEach(b => b.onclick = () => location.hash = '#/p/' + b.dataset.id);
   $('#newp').onclick = async () => {
     const r = await dialog(t('Neues Profil'), `<label>${t('Name')}</label><input name="name" required placeholder="${t('z. B. Zuhause')}"><label>${t('Passwort (optional)')}</label><input name="password" type="password" autocomplete="new-password"><div class="info">${t('Mit Passwort sind die Konfigurationen dieses Profils erst nach Anmeldung sichtbar und änderbar.')}</div>`,
