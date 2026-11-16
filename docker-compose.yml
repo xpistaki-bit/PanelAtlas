@@ -1,0 +1,15 @@
+# docker compose up -d --build
+services:
+  panelatlas:
+    build: .
+    image: panelatlas:latest
+    container_name: panelatlas
+    restart: unless-stopped
+    ports:
+      - "8080:8080"        # host:container – change the left number to use another port
+    volumes:
+      - verteiler-data:/data
+      # - /mnt/nas/verteiler:/backup   # optional: folder for the "Folder / NAS" backup target (enter /backup in the app)
+
+volumes:
+  verteiler-data:

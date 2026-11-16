@@ -1,0 +1,4725 @@
+[
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA13",
+  "name": "Kleinverteiler Aufputz, 1 Feld, 3 Reihen, 36 PLE",
+  "data": {
+   "height_mm": 500,
+   "width_mm": 300,
+   "depth_mm": 160,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052142R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA14",
+  "name": "Kleinverteiler Aufputz, 1 Feld, 4 Reihen, 48 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 300,
+   "depth_mm": 160,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052143R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA15",
+  "name": "Kleinverteiler Aufputz, 1 Feld, 5 Reihen, 60 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 300,
+   "depth_mm": 160,
+   "rows": 5,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052144R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA16",
+  "name": "Kleinverteiler Aufputz, 1 Feld, 6 Reihen, 72 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 300,
+   "depth_mm": 160,
+   "rows": 6,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052145R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA17",
+  "name": "Kleinverteiler Aufputz, 1 Feld, 7 Reihen, 84 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 300,
+   "depth_mm": 160,
+   "rows": 7,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA24",
+  "name": "Kleinverteiler Aufputz, 2 Felder, 4 Reihen, 96 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 550,
+   "depth_mm": 160,
+   "rows": 4,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052149R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA25",
+  "name": "Kleinverteiler Aufputz, 2 Felder, 5 Reihen, 120 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 550,
+   "depth_mm": 160,
+   "rows": 5,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052150R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA26",
+  "name": "Kleinverteiler Aufputz, 2 Felder, 6 Reihen, 144 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 550,
+   "depth_mm": 160,
+   "rows": 6,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052151R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA27",
+  "name": "Kleinverteiler Aufputz, 2 Felder, 7 Reihen, 168 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 550,
+   "depth_mm": 160,
+   "rows": 7,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052152R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA28",
+  "name": "Kleinverteiler Aufputz, 2 Felder, 8 Reihen, 192 PLE",
+  "data": {
+   "height_mm": 1250,
+   "width_mm": 550,
+   "depth_mm": 160,
+   "rows": 8,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052153R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA34",
+  "name": "Kleinverteiler Aufputz, 3 Felder, 4 Reihen, 144 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 800,
+   "depth_mm": 160,
+   "rows": 4,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052154R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA35",
+  "name": "Kleinverteiler Aufputz, 3 Felder, 5 Reihen, 180 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 800,
+   "depth_mm": 160,
+   "rows": 5,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052155R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA36",
+  "name": "Kleinverteiler Aufputz, 3 Felder, 6 Reihen, 216 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 800,
+   "depth_mm": 160,
+   "rows": 6,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052156R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CA",
+  "article": "CA37",
+  "name": "Kleinverteiler Aufputz, 3 Felder, 7 Reihen, 252 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 800,
+   "depth_mm": 160,
+   "rows": 7,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "2CPX052157R9999",
+   "note": "Bestückung mit Verteilerfeldern V angenommen; Ausbauvariante prüfen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CU",
+  "article": "CU17V",
+  "name": "Kleinverteiler Unterputz, 1 Feld, 7 Reihen, 84 PLE",
+  "data": {
+   "height_mm": 1164,
+   "width_mm": 365,
+   "depth_mm": 125,
+   "rows": 7,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX052610R9999",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CU",
+  "article": "CU18V",
+  "name": "Kleinverteiler Unterputz, 1 Feld, 8 Reihen, 96 PLE",
+  "data": {
+   "height_mm": 1315,
+   "width_mm": 365,
+   "depth_mm": 125,
+   "rows": 8,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX052611R9999",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "ComfortLine Compact CU",
+  "article": "CU23V",
+  "name": "Kleinverteiler Unterputz, 2 Felder, 3 Reihen, 72 PLE",
+  "data": {
+   "height_mm": 565,
+   "width_mm": 615,
+   "depth_mm": 125,
+   "rows": 3,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX052612R9999",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "UK600",
+  "article": "UK624N3",
+  "name": "Unterputzverteiler, 2-reihig, 24 PLE",
+  "data": {
+   "height_mm": 480,
+   "width_mm": 367,
+   "depth_mm": 95,
+   "rows": 2,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX031370R9999",
+   "note": "Maße = Nischenmaß; 12 (14) PLE je Reihe",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "UK600",
+  "article": "UK636N3",
+  "name": "Unterputzverteiler, 3-reihig, 36 PLE",
+  "data": {
+   "height_mm": 605,
+   "width_mm": 367,
+   "depth_mm": 95,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX031371R9999",
+   "note": "Maße = Nischenmaß; 12 (14) PLE je Reihe",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "ABB",
+  "series": "UK600",
+  "article": "UK648N3",
+  "name": "Unterputzverteiler, 4-reihig, 48 PLE",
+  "data": {
+   "height_mm": 730,
+   "width_mm": 367,
+   "depth_mm": 95,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "2CPX031372R9999",
+   "note": "Maße = Nischenmaß; 12 (14) PLE je Reihe",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VA12CN",
+  "name": "Kleinverteiler volta Aufputz, 1x12 PLE, IP30",
+  "data": {
+   "height_mm": 245,
+   "width_mm": 305,
+   "depth_mm": 96.5,
+   "rows": 1,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VA24CN",
+  "name": "Kleinverteiler volta Aufputz, 2x12 PLE, IP30",
+  "data": {
+   "height_mm": 370,
+   "width_mm": 305,
+   "depth_mm": 96.5,
+   "rows": 2,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VA36CN",
+  "name": "Kleinverteiler volta Aufputz, 3x12 PLE, IP30",
+  "data": {
+   "height_mm": 515,
+   "width_mm": 305,
+   "depth_mm": 96.5,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VA48CN",
+  "name": "Kleinverteiler volta Aufputz, 4x12 PLE, IP30",
+  "data": {
+   "height_mm": 640,
+   "width_mm": 305,
+   "depth_mm": 96.5,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VA60CN",
+  "name": "Kleinverteiler volta Aufputz, 5x12 PLE, IP30",
+  "data": {
+   "height_mm": 765,
+   "width_mm": 305,
+   "depth_mm": 96.5,
+   "rows": 5,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VU12NC",
+  "name": "Kleinverteiler volta Unterputz, 1x12 PLE, IP30",
+  "data": {
+   "height_mm": 356.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 1,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VU24NC",
+  "name": "Kleinverteiler volta Unterputz, 2x12 PLE, IP30",
+  "data": {
+   "height_mm": 505.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 2,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VU36NC",
+  "name": "Kleinverteiler volta Unterputz, 3x12 PLE, IP30",
+  "data": {
+   "height_mm": 630.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VU48NC",
+  "name": "Kleinverteiler volta Unterputz, 4x12 PLE, IP30",
+  "data": {
+   "height_mm": 755.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VU60NC",
+  "name": "Kleinverteiler volta Unterputz, 5x12 PLE, IP30",
+  "data": {
+   "height_mm": 880.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 5,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VH12NC",
+  "name": "Kleinverteiler volta Hohlwand, 1x12 PLE, IP30",
+  "data": {
+   "height_mm": 356.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 1,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "HW",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VH24NC",
+  "name": "Kleinverteiler volta Hohlwand, 2x12 PLE, IP30",
+  "data": {
+   "height_mm": 505.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 2,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "HW",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VH36NC",
+  "name": "Kleinverteiler volta Hohlwand, 3x12 PLE, IP30",
+  "data": {
+   "height_mm": 630.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "HW",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VH48NC",
+  "name": "Kleinverteiler volta Hohlwand, 4x12 PLE, IP30",
+  "data": {
+   "height_mm": 755.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "HW",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "volta",
+  "article": "VH60NC",
+  "name": "Kleinverteiler volta Hohlwand, 5x12 PLE, IP30",
+  "data": {
+   "height_mm": 880.5,
+   "width_mm": 348,
+   "depth_mm": 94.5,
+   "rows": 5,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "HW",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Blendrahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB31S",
+  "name": "AP-Feldverteiler IP44, 1 Feld, 3 Reihen, 36 PLE",
+  "data": {
+   "height_mm": 500,
+   "width_mm": 300,
+   "depth_mm": 161,
+   "rows": 3,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB32S",
+  "name": "AP-Feldverteiler IP44, 2 Felder, 3 Reihen, 72 PLE",
+  "data": {
+   "height_mm": 500,
+   "width_mm": 550,
+   "depth_mm": 161,
+   "rows": 3,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB33S",
+  "name": "AP-Feldverteiler IP44, 3 Felder, 3 Reihen, 108 PLE",
+  "data": {
+   "height_mm": 500,
+   "width_mm": 800,
+   "depth_mm": 161,
+   "rows": 3,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB41S",
+  "name": "AP-Feldverteiler IP44, 1 Feld, 4 Reihen, 48 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 300,
+   "depth_mm": 161,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB42S",
+  "name": "AP-Feldverteiler IP44, 2 Felder, 4 Reihen, 96 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 550,
+   "depth_mm": 161,
+   "rows": 4,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB43S",
+  "name": "AP-Feldverteiler IP44, 3 Felder, 4 Reihen, 144 PLE",
+  "data": {
+   "height_mm": 650,
+   "width_mm": 800,
+   "depth_mm": 161,
+   "rows": 4,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB51S",
+  "name": "AP-Feldverteiler IP44, 1 Feld, 5 Reihen, 60 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 300,
+   "depth_mm": 161,
+   "rows": 5,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB52S",
+  "name": "AP-Feldverteiler IP44, 2 Felder, 5 Reihen, 120 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 550,
+   "depth_mm": 161,
+   "rows": 5,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB53S",
+  "name": "AP-Feldverteiler IP44, 3 Felder, 5 Reihen, 180 PLE",
+  "data": {
+   "height_mm": 800,
+   "width_mm": 800,
+   "depth_mm": 161,
+   "rows": 5,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB61S",
+  "name": "AP-Feldverteiler IP44, 1 Feld, 6 Reihen, 72 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 300,
+   "depth_mm": 161,
+   "rows": 6,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB62S",
+  "name": "AP-Feldverteiler IP44, 2 Felder, 6 Reihen, 144 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 550,
+   "depth_mm": 161,
+   "rows": 6,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB63S",
+  "name": "AP-Feldverteiler IP44, 3 Felder, 6 Reihen, 216 PLE",
+  "data": {
+   "height_mm": 950,
+   "width_mm": 800,
+   "depth_mm": 161,
+   "rows": 6,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB71S",
+  "name": "AP-Feldverteiler IP44, 1 Feld, 7 Reihen, 84 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 300,
+   "depth_mm": 161,
+   "rows": 7,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB72S",
+  "name": "AP-Feldverteiler IP44, 2 Felder, 7 Reihen, 168 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 550,
+   "depth_mm": 161,
+   "rows": 7,
+   "fields": 2,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Hager",
+  "series": "univers Feldverteiler",
+  "article": "FWB73S",
+  "name": "AP-Feldverteiler IP44, 3 Felder, 7 Reihen, 252 PLE",
+  "data": {
+   "height_mm": 1100,
+   "width_mm": 800,
+   "depth_mm": 161,
+   "rows": 7,
+   "fields": 3,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "AP",
+   "verified": true,
+   "order_no": "",
+   "note": "",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "enclosure",
+  "manufacturer": "Schneider Electric",
+  "series": "Resi9 KV",
+  "article": "R9H10938",
+  "name": "Kleinverteiler Resi9 KV Unterputz, 4x12 Module",
+  "data": {
+   "height_mm": 749,
+   "width_mm": 344,
+   "depth_mm": 90,
+   "rows": 4,
+   "fields": 1,
+   "te_per_row": 12,
+   "row_pitch_mm": 125,
+   "mount": "UP",
+   "verified": true,
+   "order_no": "",
+   "note": "Außenmaß Rahmen",
+   "pen_blocks": [
+    "top",
+    "bottom"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN106",
+  "name": "LS-Schalter B6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN110",
+  "name": "LS-Schalter B10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN113",
+  "name": "LS-Schalter B13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN116",
+  "name": "LS-Schalter B16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN120",
+  "name": "LS-Schalter B20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN125",
+  "name": "LS-Schalter B25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN132",
+  "name": "LS-Schalter B32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN306",
+  "name": "LS-Schalter B6, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 6,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN310",
+  "name": "LS-Schalter B10, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN313",
+  "name": "LS-Schalter B13, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN316",
+  "name": "LS-Schalter B16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN320",
+  "name": "LS-Schalter B20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN325",
+  "name": "LS-Schalter B25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MBN332",
+  "name": "LS-Schalter B32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN106",
+  "name": "LS-Schalter C6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN110",
+  "name": "LS-Schalter C10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN113",
+  "name": "LS-Schalter C13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN116",
+  "name": "LS-Schalter C16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN120",
+  "name": "LS-Schalter C20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN125",
+  "name": "LS-Schalter C25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN132",
+  "name": "LS-Schalter C32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN306",
+  "name": "LS-Schalter C6, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 6,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN310",
+  "name": "LS-Schalter C10, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 10,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN313",
+  "name": "LS-Schalter C13, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 13,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN316",
+  "name": "LS-Schalter C16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN320",
+  "name": "LS-Schalter C20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN325",
+  "name": "LS-Schalter C25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "LS 6 kA",
+  "article": "MCN332",
+  "name": "LS-Schalter C32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI Typ A",
+  "article": "CDA240D",
+  "name": "FI-Schutzschalter 2-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI Typ A",
+  "article": "CDA263D",
+  "name": "FI-Schutzschalter 2-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI Typ A",
+  "article": "CDA440D",
+  "name": "FI-Schutzschalter 4-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI Typ A",
+  "article": "CDA463D",
+  "name": "FI-Schutzschalter 4-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI/LS",
+  "article": "ADS906D",
+  "name": "FI/LS-Schalter B6, 1P+N, 30 mA, Typ A, 6 kA",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 6,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI/LS",
+  "article": "ADS910D",
+  "name": "FI/LS-Schalter B10, 1P+N, 30 mA, Typ A, 6 kA",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI/LS",
+  "article": "ADS913D",
+  "name": "FI/LS-Schalter B13, 1P+N, 30 mA, Typ A, 6 kA",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI/LS",
+  "article": "ADS916D",
+  "name": "FI/LS-Schalter B16, 1P+N, 30 mA, Typ A, 6 kA",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "FI/LS",
+  "article": "ADS920D",
+  "name": "FI/LS-Schalter B20, 1P+N, 30 mA, Typ A, 6 kA",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "AFDD",
+  "article": "ARC910D",
+  "name": "Brandschutzschalter mit LS B10, 1P+N",
+  "data": {
+   "category": "afdd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite laut Bestellhilfe 2 PLE, bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "AFDD",
+  "article": "ARC913D",
+  "name": "Brandschutzschalter mit LS B13, 1P+N",
+  "data": {
+   "category": "afdd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite laut Bestellhilfe 2 PLE, bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "AFDD",
+  "article": "ARC916D",
+  "name": "Brandschutzschalter mit LS B16, 1P+N",
+  "data": {
+   "category": "afdd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite laut Bestellhilfe 2 PLE, bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Ausschalter",
+  "article": "SBN340",
+  "name": "Ausschalter 3-polig, 40 A",
+  "data": {
+   "category": "switch",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Ausschalter",
+  "article": "SBN363",
+  "name": "Ausschalter 3-polig, 63 A",
+  "data": {
+   "category": "switch",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Ausschalter",
+  "article": "SBN440",
+  "name": "Ausschalter 4-polig, 40 A",
+  "data": {
+   "category": "switch",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Ausschalter",
+  "article": "SBN463",
+  "name": "Ausschalter 4-polig, 63 A",
+  "data": {
+   "category": "switch",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Ausschalter",
+  "article": "SH363N",
+  "name": "Ausschalter 3-polig, 63 A",
+  "data": {
+   "category": "switch",
+   "width_mm": 43.75,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Überspannungsschutz",
+  "article": "SPB413",
+  "name": "Überspannungsableiter Typ 2, 4P, 40 kA, TT/TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite 4 PLE angenommen, bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Überspannungsschutz",
+  "article": "SPA412",
+  "name": "Kombiableiter Typ 1+2+3, 4P, TN-S/TT, 12,5 kA, mit FM",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35A",
+  "name": "Hauptleitungsabzweigklemme 4-polig, 35 mm², 100 A",
+  "data": {
+   "category": "hlak",
+   "width_mm": 96,
+   "height_mm": 49,
+   "poles": 4,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35L3",
+  "name": "Hauptleitungsabzweigklemme 3-polig, 35 mm², 100 A",
+  "data": {
+   "category": "hlak",
+   "width_mm": 71,
+   "height_mm": 55,
+   "poles": 3,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35N",
+  "name": "Hauptleitungsabzweigklemme 1-polig N, blau, 100 A",
+  "data": {
+   "category": "hlak",
+   "width_mm": 27,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Schaltgeräte",
+  "article": "EPN510",
+  "name": "Fernschalter (Stromstoß) 1 Schließer, 230 V, 16 A",
+  "data": {
+   "category": "relay",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Schaltgeräte",
+  "article": "ESC225",
+  "name": "Installationsschütz 25 A, 2 Schließer, 230 V",
+  "data": {
+   "category": "relay",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 25,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B6",
+  "name": "LS-Schalter B6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B10",
+  "name": "LS-Schalter B10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B13",
+  "name": "LS-Schalter B13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B16",
+  "name": "LS-Schalter B16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B20",
+  "name": "LS-Schalter B20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B25",
+  "name": "LS-Schalter B25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-B32",
+  "name": "LS-Schalter B32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-B16",
+  "name": "LS-Schalter B16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-B20",
+  "name": "LS-Schalter B20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-B25",
+  "name": "LS-Schalter B25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-B32",
+  "name": "LS-Schalter B32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C6",
+  "name": "LS-Schalter C6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C10",
+  "name": "LS-Schalter C10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C13",
+  "name": "LS-Schalter C13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C16",
+  "name": "LS-Schalter C16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C20",
+  "name": "LS-Schalter C20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C25",
+  "name": "LS-Schalter C25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S201-C32",
+  "name": "LS-Schalter C32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-C16",
+  "name": "LS-Schalter C16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-C20",
+  "name": "LS-Schalter C20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-C25",
+  "name": "LS-Schalter C25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "S200",
+  "article": "S203-C32",
+  "name": "LS-Schalter C32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F202 A-25/0,03",
+  "name": "FI-Schutzschalter 2-polig, 25 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 25,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F202 A-40/0,03",
+  "name": "FI-Schutzschalter 2-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F202 A-63/0,03",
+  "name": "FI-Schutzschalter 2-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F204 A-25/0,03",
+  "name": "FI-Schutzschalter 4-polig, 25 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 25,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F204 A-40/0,03",
+  "name": "FI-Schutzschalter 4-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "F200",
+  "article": "F204 A-63/0,03",
+  "name": "FI-Schutzschalter 4-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "DS201",
+  "article": "DS201 A-B10/0,03",
+  "name": "FI/LS-Schalter B10, 1P+N, 30 mA, Typ A",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "DS201",
+  "article": "DS201 A-B13/0,03",
+  "name": "FI/LS-Schalter B13, 1P+N, 30 mA, Typ A",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "DS201",
+  "article": "DS201 A-B16/0,03",
+  "name": "FI/LS-Schalter B16, 1P+N, 30 mA, Typ A",
+  "data": {
+   "category": "rcbo",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "ABB",
+  "series": "OVR",
+  "article": "OVR T2 3N 40-275 P QS",
+  "name": "Überspannungsableiter Typ 2, 3P+N, 40 kA",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03106",
+  "name": "LS-Schalter iC60N B6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03110",
+  "name": "LS-Schalter iC60N B10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03113",
+  "name": "LS-Schalter iC60N B13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03116",
+  "name": "LS-Schalter iC60N B16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03120",
+  "name": "LS-Schalter iC60N B20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03125",
+  "name": "LS-Schalter iC60N B25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03132",
+  "name": "LS-Schalter iC60N B32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03316",
+  "name": "LS-Schalter iC60N B16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03320",
+  "name": "LS-Schalter iC60N B20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03325",
+  "name": "LS-Schalter iC60N B25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F03332",
+  "name": "LS-Schalter iC60N B32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "B",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04106",
+  "name": "LS-Schalter iC60N C6, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 6,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04110",
+  "name": "LS-Schalter iC60N C10, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 10,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04113",
+  "name": "LS-Schalter iC60N C13, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 13,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04116",
+  "name": "LS-Schalter iC60N C16, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04120",
+  "name": "LS-Schalter iC60N C20, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04125",
+  "name": "LS-Schalter iC60N C25, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04132",
+  "name": "LS-Schalter iC60N C32, 1-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04316",
+  "name": "LS-Schalter iC60N C16, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 16,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04320",
+  "name": "LS-Schalter iC60N C20, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 20,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04325",
+  "name": "LS-Schalter iC60N C25, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 25,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iC60N",
+  "article": "A9F04332",
+  "name": "LS-Schalter iC60N C32, 3-polig, 6 kA",
+  "data": {
+   "category": "ls",
+   "width_mm": 52.5,
+   "height_mm": 85,
+   "poles": 3,
+   "current_a": 32,
+   "characteristic": "C",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21225",
+  "name": "FI-Schutzschalter iID 2-polig, 25 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 25,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21240",
+  "name": "FI-Schutzschalter iID 2-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21263",
+  "name": "FI-Schutzschalter iID 2-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 35.0,
+   "height_mm": 85,
+   "poles": 2,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21425",
+  "name": "FI-Schutzschalter iID 4-polig, 25 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 25,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21440",
+  "name": "FI-Schutzschalter iID 4-polig, 40 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 40,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Schneider Electric",
+  "series": "Acti9 iID",
+  "article": "A9Z21463",
+  "name": "FI-Schutzschalter iID 4-polig, 63 A, 30 mA, Typ A",
+  "data": {
+   "category": "rcd",
+   "width_mm": 70.0,
+   "height_mm": 85,
+   "poles": 4,
+   "current_a": 63,
+   "characteristic": "",
+   "rcd_ma": 30,
+   "rcd_type": "A",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "DEHN",
+  "series": "DEHNguard",
+  "article": "952 400",
+  "name": "DEHNguard M TNS 275, Überspannungsableiter Typ 2, TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 90,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "DEHN",
+  "series": "DEHNguard",
+  "article": "952 310",
+  "name": "DEHNguard M TT 275, Überspannungsableiter Typ 2, TT/TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 90,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "DEHN",
+  "series": "DEHNshield",
+  "article": "941 400",
+  "name": "DEHNshield TNS 255, Kombi-Ableiter Typ 1+2, TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 90,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "DEHN",
+  "series": "DEHNshield",
+  "article": "941 310",
+  "name": "DEHNshield TT 255, Kombi-Ableiter Typ 1+2, TT/TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 70.0,
+   "height_mm": 90,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "DEHN",
+  "series": "DEHNventil",
+  "article": "951 400",
+  "name": "DEHNventil M TNS 255, Kombi-Ableiter Typ 1+2, TN-S",
+  "data": {
+   "category": "spd",
+   "width_mm": 140.0,
+   "height_mm": 90,
+   "poles": 4,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3209510",
+  "name": "PT 2,5 Durchgangsklemme, Push-in, 24 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 5.2,
+   "height_mm": 48.5,
+   "poles": 1,
+   "current_a": 24,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3209523",
+  "name": "PT 2,5 BU Durchgangsklemme, Push-in, 24 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 5.2,
+   "height_mm": 48.5,
+   "poles": 1,
+   "current_a": 24,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3209536",
+  "name": "PT 2,5-PE Schutzleiterklemme, Push-in, 24 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 5.2,
+   "height_mm": 48.5,
+   "poles": 1,
+   "current_a": 24,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211757",
+  "name": "PT 4 Durchgangsklemme, Push-in, 32 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 6.2,
+   "height_mm": 56,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211760",
+  "name": "PT 4 BU Durchgangsklemme, Push-in, 32 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 6.2,
+   "height_mm": 56,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211766",
+  "name": "PT 4-PE Schutzleiterklemme, Push-in, 32 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 6.2,
+   "height_mm": 56,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211813",
+  "name": "PT 6 Durchgangsklemme, Push-in, 41 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 8.2,
+   "height_mm": 57.7,
+   "poles": 1,
+   "current_a": 41,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211819",
+  "name": "PT 6 BU Durchgangsklemme, Push-in, 41 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 8.2,
+   "height_mm": 57.7,
+   "poles": 1,
+   "current_a": 41,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3211822",
+  "name": "PT 6-PE Schutzleiterklemme, Push-in, 41 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 8.2,
+   "height_mm": 57.7,
+   "poles": 1,
+   "current_a": 41,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": "Länge Näherungswert"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3212120",
+  "name": "PT 10 Durchgangsklemme, Push-in, 57 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 10.2,
+   "height_mm": 67.7,
+   "poles": 1,
+   "current_a": 57,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3212123",
+  "name": "PT 10 BU Durchgangsklemme, Push-in, 57 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 10.2,
+   "height_mm": 67.7,
+   "poles": 1,
+   "current_a": 57,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PT",
+  "article": "3212131",
+  "name": "PT 10-PE Schutzleiterklemme, Push-in, 57 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 10.2,
+   "height_mm": 67.7,
+   "poles": 1,
+   "current_a": 57,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": false,
+   "note": "Länge Näherungswert; Breite bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PTI",
+  "article": "3213950",
+  "name": "PTI 2,5-PE/L/N Installationsetagenklemme, 24 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 5.2,
+   "height_mm": 100,
+   "poles": 1,
+   "current_a": 24,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße Näherungswerte"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PTI",
+  "article": "3213954",
+  "name": "PTI 2,5-L/N Installationsetagenklemme, 24 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 5.2,
+   "height_mm": 100,
+   "poles": 1,
+   "current_a": 24,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße Näherungswerte"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE PTI",
+  "article": "3214049",
+  "name": "PTI 4-PE/L/N Installationsetagenklemme, 28 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 6.2,
+   "height_mm": 100,
+   "poles": 1,
+   "current_a": 28,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße Näherungswerte"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE UT",
+  "article": "3044102",
+  "name": "UT 4 Durchgangsklemme, Schraubanschluss, 32 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 6.2,
+   "height_mm": 48,
+   "poles": 1,
+   "current_a": 32,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße Näherungswerte"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Phoenix Contact",
+  "series": "CLIPLINE UT",
+  "article": "3044131",
+  "name": "UT 6 Durchgangsklemme, Schraubanschluss, 41 A",
+  "data": {
+   "category": "terminal",
+   "width_mm": 8.2,
+   "height_mm": 48,
+   "poles": 1,
+   "current_a": 41,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße Näherungswerte"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35E",
+  "name": "Hauptleitungsabzweigklemme 1-polig PE, 35 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 27,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35L",
+  "name": "Hauptleitungsabzweigklemme 1-polig L, 35 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 27,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35E8",
+  "name": "Hauptleitungsabzweigklemme 1-polig PE, 35 mm², 8 Klemmstellen",
+  "data": {
+   "category": "hlak",
+   "width_mm": 46,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35L8",
+  "name": "Hauptleitungsabzweigklemme 1-polig L, 35 mm², 8 Klemmstellen",
+  "data": {
+   "category": "hlak",
+   "width_mm": 46,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH35N8",
+  "name": "Hauptleitungsabzweigklemme 1-polig N, 35 mm², 8 Klemmstellen",
+  "data": {
+   "category": "hlak",
+   "width_mm": 46,
+   "height_mm": 55,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH70G",
+  "name": "Hauptleitungsabzweigklemme 1-polig L, 70 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 60,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH70B",
+  "name": "Hauptleitungsabzweigklemme 1-polig N, 70 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 60,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH70GN",
+  "name": "Hauptleitungsabzweigklemme 1-polig PE, 70 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 60,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH45A",
+  "name": "Hauptleitungsabzweigklemme 5-polig, 35 mm², IP20",
+  "data": {
+   "category": "hlak",
+   "width_mm": 135,
+   "height_mm": 38,
+   "poles": 5,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "bl",
+    "pe"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH23C",
+  "name": "Hauptleitungsabzweigklemme universZ 3-polig, 2x25/2x16 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 69.2,
+   "height_mm": 65.9,
+   "poles": 3,
+   "current_a": 80,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Hager",
+  "series": "Hauptleitungsabzweigklemme",
+  "article": "KH24C",
+  "name": "Hauptleitungsabzweigklemme universZ 4-polig, 2x25/2x16 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 82.4,
+   "height_mm": 65.9,
+   "poles": 4,
+   "current_a": 80,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110188",
+  "name": "HLAK1p25gr Hauptleitungsabzweigklemme 1-polig, 25 mm², grau",
+  "data": {
+   "category": "hlak",
+   "width_mm": 17.8,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110189",
+  "name": "HLAK1p25bl Hauptleitungsabzweigklemme 1-polig, 25 mm², blau",
+  "data": {
+   "category": "hlak",
+   "width_mm": 17.8,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110190",
+  "name": "HLAK1p25gnge Hauptleitungsabzweigklemme 1-polig, 25 mm², grün-gelb",
+  "data": {
+   "category": "hlak",
+   "width_mm": 17.8,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110192",
+  "name": "HLAK1p25sw Hauptleitungsabzweigklemme 1-polig, 25 mm², schwarz",
+  "data": {
+   "category": "hlak",
+   "width_mm": 17.8,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "black",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110195",
+  "name": "HLAK1p35gr Hauptleitungsabzweigklemme 1-polig, 35 mm², grau",
+  "data": {
+   "category": "hlak",
+   "width_mm": 22.2,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110196",
+  "name": "HLAK1p35bl Hauptleitungsabzweigklemme 1-polig, 35 mm², blau",
+  "data": {
+   "category": "hlak",
+   "width_mm": 22.2,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "blue",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110197",
+  "name": "HLAK1p35gnge Hauptleitungsabzweigklemme 1-polig, 35 mm², grün-gelb",
+  "data": {
+   "category": "hlak",
+   "width_mm": 22.2,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110199",
+  "name": "HLAK1p35sw Hauptleitungsabzweigklemme 1-polig, 35 mm², schwarz",
+  "data": {
+   "category": "hlak",
+   "width_mm": 22.2,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "black",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110198",
+  "name": "HLAK1p35br Hauptleitungsabzweigklemme 1-polig, 35 mm², braun",
+  "data": {
+   "category": "hlak",
+   "width_mm": 22.2,
+   "height_mm": 49.3,
+   "poles": 1,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "brown",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110194",
+  "name": "HLAK3p25gr Hauptleitungsabzweigklemme 3-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 53.7,
+   "height_mm": 49.3,
+   "poles": 3,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110193",
+  "name": "HLAK3p25brswgr Hauptleitungsabzweigklemme 3-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 53.7,
+   "height_mm": 49.3,
+   "poles": 3,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße vom einfarbigen Typ übernommen",
+   "pole_colors": [
+    "br",
+    "sw",
+    "gr"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110233",
+  "name": "HLAK4p25gr Hauptleitungsabzweigklemme 4-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 71.6,
+   "height_mm": 49.3,
+   "poles": 4,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "gr"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110235",
+  "name": "HLAK4p25grbl Hauptleitungsabzweigklemme 4-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 71.6,
+   "height_mm": 49.3,
+   "poles": 4,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "bl"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110234",
+  "name": "HLAK4p25grgn Hauptleitungsabzweigklemme 4-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 71.6,
+   "height_mm": 49.3,
+   "poles": 4,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "pe"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110236",
+  "name": "HLAK5p25gr Hauptleitungsabzweigklemme 5-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 88.8,
+   "height_mm": 49.3,
+   "poles": 5,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "gr",
+    "gr"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 25 mm²",
+  "article": "7110237",
+  "name": "HLAK5p25grblgn Hauptleitungsabzweigklemme 5-polig, 25 mm²",
+  "data": {
+   "category": "hlak",
+   "width_mm": 88.8,
+   "height_mm": 49.3,
+   "poles": 5,
+   "current_a": 100,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "bl",
+    "pe"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 35 mm²",
+  "article": "7110089",
+  "name": "HLAK4p35gr Hauptleitungsabzweigklemme 4-polig, 35 mm², grau",
+  "data": {
+   "category": "hlak",
+   "width_mm": 88.8,
+   "height_mm": 49.3,
+   "poles": 4,
+   "current_a": 125,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Breite aus 4 x 22,2 mm abgeleitet",
+   "pole_colors": [
+    "gr",
+    "gr",
+    "gr",
+    "gr"
+   ]
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 70 mm²",
+  "article": "7110205",
+  "name": "HLAK1p70sw Hauptleitungsabzweigklemme 1-polig, 70 mm², schwarz",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 63,
+   "poles": 1,
+   "current_a": 160,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "black",
+   "verified": false,
+   "note": "Höhe bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 70 mm²",
+  "article": "7110204",
+  "name": "HLAK1p70br Hauptleitungsabzweigklemme 1-polig, 70 mm², braun",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 63,
+   "poles": 1,
+   "current_a": 160,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "brown",
+   "verified": false,
+   "note": "Höhe bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "f-tronic",
+  "series": "HLAK 70 mm²",
+  "article": "7110203",
+  "name": "HLAK1p70gnge Hauptleitungsabzweigklemme 1-polig, 70 mm², grün-gelb",
+  "data": {
+   "category": "hlak",
+   "width_mm": 32.8,
+   "height_mm": 63,
+   "poles": 1,
+   "current_a": 160,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "pe",
+   "verified": false,
+   "note": "Höhe bitte prüfen"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Zähler",
+  "article": "mME-eHZ",
+  "name": "mME – moderne Messeinrichtung, digitaler Stromzähler (eHZ, Stecktechnik)",
+  "data": {
+   "category": "meter",
+   "width_mm": 90,
+   "height_mm": 135,
+   "poles": 4,
+   "current_a": 60,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": "",
+   "meter_type": "mme"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Zähler",
+  "article": "mME-3HZ",
+  "name": "mME – moderne Messeinrichtung, digitaler Stromzähler (Dreipunktbefestigung)",
+  "data": {
+   "category": "meter",
+   "width_mm": 175,
+   "height_mm": 250,
+   "poles": 4,
+   "current_a": 60,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße je nach Hersteller, Richtwert",
+   "meter_type": "mme"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Zähler",
+  "article": "kME-Ferraris",
+  "name": "kME – konventioneller Ferraris-Zähler, Drehstrom (Dreipunktbefestigung)",
+  "data": {
+   "category": "meter",
+   "width_mm": 175,
+   "height_mm": 290,
+   "poles": 4,
+   "current_a": 60,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "Maße je nach Hersteller, Richtwert",
+   "meter_type": "ferraris"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Zähler",
+  "article": "iMSys",
+  "name": "iMSys – intelligentes Messsystem / Smart Meter (mME + Smart-Meter-Gateway)",
+  "data": {
+   "category": "meter",
+   "width_mm": 180,
+   "height_mm": 135,
+   "poles": 4,
+   "current_a": 60,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": "eHZ plus Gateway nebeneinander, Richtwert",
+   "meter_type": "imsys"
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Platzhalter",
+  "article": "LEER-0,5",
+  "name": "Leerplatz / Abdeckstreifen 0,5 TE",
+  "data": {
+   "category": "blank",
+   "width_mm": 8.75,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Platzhalter",
+  "article": "LEER-1",
+  "name": "Leerplatz / Abdeckstreifen 1 TE",
+  "data": {
+   "category": "blank",
+   "width_mm": 17.5,
+   "height_mm": 85,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": true,
+   "note": ""
+  }
+ },
+ {
+  "kind": "device",
+  "manufacturer": "Allgemein",
+  "series": "Platzhalter",
+  "article": "ENDHALTER",
+  "name": "Endhalter für Reihenklemmen (ca. 9,5 mm)",
+  "data": {
+   "category": "terminal",
+   "width_mm": 9.5,
+   "height_mm": 45,
+   "poles": 1,
+   "current_a": null,
+   "characteristic": "",
+   "rcd_ma": null,
+   "rcd_type": "",
+   "color": "",
+   "verified": false,
+   "note": ""
+  }
+ }
+]
