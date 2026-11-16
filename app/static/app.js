@@ -196,7 +196,7 @@ async function viewEditor(cid) {
    <section class="stage"><div class="tools"><input class="name" id="cname" value="${h(c.name)}" aria-label="${t('Name der Konfiguration')}">
       <span class="save" id="save">${t('gespeichert')}</span><span class="grow"></span>
       <button class="sm" id="zo" title="${t('Verkleinern')}">−</button><button class="sm" id="zf">${t('Einpassen')}</button><button class="sm" id="zi" title="${t('Vergrößern')}">+</button>
-      <a class="btn sm" href="${q(`/api/configs/${cid}/pdf`)}" target="_blank">${t('Drucken / PDF')}</a><button class="sm" id="blabel">${t('Etiketten')}</button>
+      <button class="sm" id="bpdf">${t('Drucken / PDF')}</button><button class="sm" id="blabel">${t('Etiketten')}</button>
       <a class="btn sm" href="${q(`/api/configs/${cid}/csv`)}">CSV</a><a class="btn sm" href="${q(`/api/configs/${cid}/csv?light=1`)}" title="${t('Nur Reihe, Position, Funktion, Raum')}">CSV light</a></div>
      <div class="canvas" id="canvas"></div></section>
    <aside class="pane right"><div class="tabs"><button data-tab="dev">${t('Gerät')}</button><button data-tab="chk">${t('Prüfung')}</button><button data-tab="enc">${t('Schrank')}</button></div><div class="body" id="insp"></div></aside></div>`;
@@ -208,7 +208,7 @@ async function viewEditor(cid) {
   $('#zi').onclick = () => { ed.zoom *= 1.25; applyZoom(); };
   $('#zo').onclick = () => { ed.zoom /= 1.25; applyZoom(); };
   $('#zf').onclick = () => { ed.zoom = null; applyZoom(); };
-  $('#blabel').onclick = labelDialog;
+  $('#blabel').onclick = labelDialog; $('#bpdf').onclick = pdfDialog;
   drawPalette(); drawSvg(c.svg); drawInspector(); wireCanvas();
 }
 function drawPalette() {
@@ -242,8 +242,8 @@ function addDevice(d) {
   if (row == null) { row = 0; for (let r = 0; r < rowCount(); r++) if (rowUsed(r) + d.width_mm <= rowWidth() + 0.01) { row = r; break; } }
   const { id, kind, custom, ...dev } = d;
   const it = { id: Math.random().toString(36).slice(2, 12), row, dev, tag: nextTag(d.category), function: '', room: '', phase: '', rcd_id: '', note: '' };
-  if (d.category === 'ls') { const rc = [...ed.cfg.items].reverse().find(i => i.row === row && i.dev.category === 'rcd'); if (rc) it.rcd_id = rc.id; }
-  ed.cfg.items.push(it); ed.sel = it.id; ed.tab = 'dev';
+  if (d.category === 'ls') { const rc = [...ed.cfg.items].reverse().find(i => i.row === row && i.dev.category === 'rcd'); if (rc) it.rcd_id = rc.id; autoPhase(it); }
+  ed.cfg.items.push(it); ed.selPen = null; ed.sel = it.id; ed.tab = 'dev';
   if (rowUsed(row) > rowWidth() + 0.01) toast(t('Reihe {n} ist damit überbelegt', { n: row + 1 }), true);
   save(); drawInspector();
 }
@@ -277,6 +277,7 @@ function applyZoom() {
 function markSel() {
   $$('#canvas .item').forEach(g => g.classList.toggle('sel', g.dataset.id === ed.sel));
   $$('#canvas .row').forEach(g => g.classList.toggle('sel', ed.selRow != null && +g.dataset.row === ed.selRow));
+  $$('#canvas .pen').forEach(g => g.classList.toggle('sel', g.dataset.pen === ed.selPen));
 }
 function svgPoint(ev) {
   const svg = $('#canvas svg'), pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
@@ -286,6 +287,9 @@ function wireCanvas() {
   const cv = $('#canvas'); let drag = null;
   cv.onpointerdown = ev => {
     const g = ev.target.closest('.item');
+    const pn = ev.target.closest('.pen');
+    if (pn && !g) { ed.selPen = pn.dataset.pen; ed.sel = null; ed.selRow = null; ed.tab = 'dev'; markSel(); drawInspector(); return; }
+    ed.selPen = null;
     if (g) { drag = { id: g.dataset.id, g, start: svgPoint(ev), moved: false }; ed.sel = g.dataset.id; ed.selRow = null; ed.tab = 'dev'; markSel(); drawInspector(); cv.setPointerCapture(ev.pointerId); return; }
     const r = ev.target.closest('.rowhit');
     if (r) { ed.selRow = +r.dataset.row; ed.sel = null; markSel(); drawInspector(); }
@@ -323,8 +327,14 @@ function removeItem(id) {
   ed.cfg.items.forEach(i => { if (i.rcd_id === id) i.rcd_id = ''; });
   ed.sel = null; save(); drawInspector();
 }
+function removePen(pos) {
+  const e = ed.cfg.enclosure; e.pen_blocks = (e.pen_blocks || ['top', 'bottom']).filter(k => k !== pos);
+  ed.selPen = null; save(); drawInspector();
+}
 document.addEventListener('keydown', ev => {
-  if (!location.hash.startsWith('#/c/') || !ed.sel || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || $('#dlg').open) return;
+  if (!location.hash.startsWith('#/c/') || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || $('#dlg').open) return;
+  if (ed.selPen && (ev.key === 'Delete' || ev.key === 'Backspace')) { removePen(ed.selPen); ev.preventDefault(); return; }
+  if (!ed.sel) return;
   if (ev.key === 'Delete' || ev.key === 'Backspace') { removeItem(ed.sel); ev.preventDefault(); }
   if (ev.key === 'ArrowLeft') { shift(ed.sel, -1); ev.preventDefault(); }
   if (ev.key === 'ArrowRight') { shift(ed.sel, 1); ev.preventDefault(); }
@@ -333,12 +343,28 @@ function updateTabCounts() {
   const open = ed.checks.filter(c => !c.ignored && c.level !== 'info').length;
   $$('.tabs button').forEach(b => { b.classList.toggle('on', b.dataset.tab === ed.tab); if (b.dataset.tab === 'chk') b.innerHTML = t('Prüfung') + (open ? ` <span class="badge ${ed.checks.some(c => !c.ignored && c.level === 'error') ? 'err' : 'warn'}">${open}</span>` : ' <span class="badge ok">✓</span>'); });
 }
+const MARKS = { red: '#ff1744', yellow: '#ffea00', magenta: '#ff00e5', cyan: '#00e5ff' };
+const LCOLS = { yellow: '#fff176', orange: '#ffb74d', red: '#e53935', pink: '#f48fb1', purple: '#8e44ad', blue: '#1e88e5', lightblue: '#90caf9', cyan: '#4dd0e1', green: '#43a047', lime: '#dce775', brown: '#8d6e63', grey: '#cfd8dc' };
+const swatches = (attr, map, cur) => `<div class="sw"><button type="button" class="swb none ${!cur ? 'on' : ''}" ${attr}="" title="${t('keine')}">×</button>${Object.entries(map).map(([k, c]) => `<button type="button" class="swb ${cur === k ? 'on' : ''}" ${attr}="${k}" style="background:${c}" title="${k}"></button>`).join('')}</div>`;
+function autoPhase(it) {
+  const rc = ed.cfg.items.find(i => i.id === it.rcd_id);
+  if (!rc || (rc.dev.poles || 2) < 3 || rc.auto_phase === false) return;
+  if ((it.dev.poles || 1) >= 3) { it.phase = 'L1-L3'; return; }
+  const n = ed.cfg.items.filter(i => i !== it && i.rcd_id === rc.id && (i.dev.poles || 1) < 3).length;
+  it.phase = ['L1', 'L2', 'L3'][n % 3];
+}
 const FN = ['Steckdosen', 'Licht', 'Herd', 'Backofen', 'Geschirrspüler', 'Waschmaschine', 'Trockner', 'Kühlschrank', 'Heizung', 'Wärmepumpe', 'Wallbox', 'Rollläden', 'Netzwerk', 'Reserve'];
 function drawInspector() {
   updateTabCounts();
   const el = $('#insp'), cfg = ed.cfg;
   if (ed.tab === 'dev') {
     const it = cfg.items.find(i => i.id === ed.sel);
+    if (!it && ed.selPen) {
+      const nm = { top: t('oben'), middle: t('Mitte'), bottom: t('unten') }[ed.selPen];
+      el.innerHTML = `<div class="info"><b>${t('PE/N-Klemmenblock')} (${nm})</b><br>${t('Mit der Entf-Taste oder dem Knopf wird der Block aus diesem Schrank entfernt. Im Reiter „Schrank“ lässt er sich wieder einschalten.')}</div><button class="danger" id="pendel">${t('Entfernen')}</button>`;
+      $('#pendel').onclick = () => removePen(ed.selPen);
+      return;
+    }
     if (!it) {
       el.innerHTML = ed.selRow != null
         ? `<div class="info">${t('<b>Reihe {n}</b> ist als Ziel gewählt ({u} von {w} TE belegt). Ein Klick auf ein Gerät im Katalog links setzt es hier ein.', { n: ed.selRow + 1, u: num(rowUsed(ed.selRow) / TE), w: rowWidth() / TE })}</div>`
@@ -355,15 +381,27 @@ function drawInspector() {
       <datalist id="rmlist">${[...new Set(cfg.items.map(i => i.room).filter(Boolean))].map(x => `<option>${h(x)}</option>`).join('')}</datalist>
       ${prot || d.category === 'rcd' ? `<div class="two"><div><label>${t('Außenleiter')}</label><select data-f="phase">${['', 'L1', 'L2', 'L3', 'L1-L3'].map(p => `<option value="${p}" ${it.phase === p ? 'selected' : ''}>${p || '–'}</option>`).join('')}</select></div>
       ${prot ? `<div><label>${t('Zugeordneter FI')}</label><select data-f="rcd_id"><option value="">${t('– keiner –')}</option>${rcds.map(r => `<option value="${r.id}" ${it.rcd_id === r.id ? 'selected' : ''}>${h(r.tag || r.dev.article)} (${r.dev.current_a} A)</option>`).join('')}</select></div>` : '<div></div>'}</div>` : ''}
+      ${prot ? `<label>${t('Angeschlossene Leiter am Abgang')}</label><select data-f="wires"><option value="1" ${it.wires !== '2' ? 'selected' : ''}>${t('1 Leiter (Standard)')}</option><option value="2" ${it.wires === '2' ? 'selected' : ''}>${t('2 Leiter – mit Markierung „2×“')}</option></select>` : ''}
+      ${d.category === 'rcd' && (d.poles || 2) >= 3 ? `<label class="chk" style="margin-top:10px"><input type="checkbox" id="autoph" ${it.auto_phase !== false ? 'checked' : ''}> ${t('Nachfolgende Sicherungen automatisch auf L1, L2, L3 verteilen')}</label>` : ''}
+      <label>${t('Markierung (Signalfarbe)')}</label>${swatches('data-mark', MARKS, it.mark)}
+      <label>${t('Farbe der Beschriftung')}</label>${swatches('data-lcol', LCOLS, it.label_color)}
       <label>${t('Notiz')}</label><textarea data-f="note" rows="2">${h(it.note)}</textarea>
       <div class="two"><div><label>${t('Breite mm')}</label><input type="number" step="0.1" min="1" data-d="width_mm" value="${d.width_mm}"></div><div><label>${t('Höhe mm')}</label><input type="number" step="0.1" min="1" data-d="height_mm" value="${d.height_mm}"></div></div>
       <div class="row" style="margin-top:14px"><button class="sm" id="il" title="${t('nach links')}">←</button><button class="sm" id="ir" title="${t('nach rechts')}">→</button><button class="sm" id="idup">${t('Duplizieren')}</button><span class="grow"></span><button class="sm danger" id="idel">${t('Entfernen')}</button></div>`;
     $$('[data-f]', el).forEach(i => i.oninput = () => { it[i.dataset.f] = i.value; save(i.tagName === 'SELECT' ? 0 : 350); });
     $$('[data-d]', el).forEach(i => i.onchange = () => { const v = parseFloat(i.value); if (v > 0) { d[i.dataset.d] = v; save(); } });
+    $$('[data-mark]', el).forEach(b => b.onclick = () => { it.mark = b.dataset.mark; save(); drawInspector(); });
+    $$('[data-lcol]', el).forEach(b => b.onclick = () => { it.label_color = b.dataset.lcol; save(); drawInspector(); });
+    if ($('#autoph')) $('#autoph').onchange = ev => {
+      it.auto_phase = ev.target.checked;
+      if (ev.target.checked) cfg.items.filter(i => i.rcd_id === it.id && !i.phase).forEach(autoPhase);
+      save();
+    };
     $('#il').onclick = () => shift(it.id, -1); $('#ir').onclick = () => shift(it.id, 1);
     $('#idel').onclick = () => removeItem(it.id);
     $('#idup').onclick = () => {
-      const c = JSON.parse(JSON.stringify(it)); c.id = Math.random().toString(36).slice(2, 12); c.tag = nextTag(d.category); c.function = ''; c.room = '';
+      const c = JSON.parse(JSON.stringify(it)); c.id = Math.random().toString(36).slice(2, 12); c.tag = nextTag(d.category); c.function = ''; c.room = ''; c.mark = '';
+      if (c.rcd_id && c.phase) autoPhase(c);
       cfg.items.splice(cfg.items.indexOf(it) + 1, 0, c); ed.sel = c.id; save(); drawInspector();
     };
   } else if (ed.tab === 'chk') {
@@ -383,7 +421,7 @@ function drawInspector() {
     const e = cfg.enclosure, s = ed.stats;
     el.innerHTML = `<div class="info"><b class="mono">${h(e.article)}</b> · ${h(e.manufacturer)} ${h(e.series || '')}<br>${h(e.name)}<br>${e.height_mm} × ${e.width_mm}${e.depth_mm ? ' × ' + e.depth_mm : ''} mm (${t('H × B × T')})<br>${e.fields > 1 ? t('{n} Felder', { n: e.fields }) + ', ' : ''}${t('{r} Reihen à {t} TE, Reihenabstand {p} mm', { r: e.rows, t: e.te_per_row, p: e.row_pitch_mm })}${e.note ? '<br>' + h(e.note) : ''}</div>
       <div class="info">${t('<b>{u} von {t} TE</b> belegt, {f} TE frei', { u: num(s.used_te), t: num(s.total_te), f: num(s.free_te) })}</div>
-      <button id="chg">${t('Schrank wechseln')}</button>
+      <div class="row"><button id="chg">${t('Schrank wechseln')}</button><button id="xfer">${t('Bestückung übernehmen …')}</button></div>
       <label>${t('Ort')}</label><input id="loc" value="${h(cfg.location || '')}" placeholder="${t('z. B. Keller')}">
       <label>${t('Notizen (erscheinen im Ausdruck)')}</label><textarea id="notes" rows="4">${h(cfg.notes || '')}</textarea>
       <label class="chk" style="margin-top:12px"><input type="checkbox" id="cover" ${cfg.view?.cover ? 'checked' : ''}> ${t('Abdeckung mit Beschriftungsfeld anzeigen')}</label>
@@ -396,6 +434,7 @@ function drawInspector() {
     $('#cover').onchange = ev => { cfg.view = { ...(cfg.view || {}), cover: ev.target.checked }; save(); };
     $('#lscale').onchange = ev => { cfg.view = { ...(cfg.view || {}), label_scale: +ev.target.value }; save(); };
     $$('[data-pen]', el).forEach(c => c.onchange = () => { e.pen_blocks = $$('[data-pen]', el).filter(x => x.checked).map(x => x.dataset.pen); save(); });
+    $('#xfer').onclick = transferDialog;
     $('#chg').onclick = async () => {
       const encs = (await catalog()).filter(x => x.kind === 'enclosure');
       const ok = await dialog(t('Schrank wechseln'), enclosurePicker(encs) + `<div class="info">${t('Die Bestückung bleibt erhalten. Geräte aus Reihen, die es im neuen Schrank nicht gibt, wandern in die letzte Reihe.')}</div>`, {
@@ -411,6 +450,69 @@ function drawInspector() {
 }
 
 /* ---------------------------------------------------------------- Etiketten */
+function pdfDialog() {
+  let o = { overview: true, detail: true, list: true, notes: true };
+  try { o = { ...o, ...JSON.parse(localStorage.getItem('vs_pdf') || '{}') }; } catch (e) { }
+  const cb = (k, l) => `<label class="chk"><input type="checkbox" name="${k}" ${o[k] ? 'checked' : ''}> ${l}</label>`;
+  dialog(t('Drucken / PDF'), `<p class="sub" style="margin:10px 0 4px">${t('Was soll das PDF enthalten?')}</p>
+    ${cb('overview', t('Gesamtansicht des Schranks'))}${cb('detail', t('Detailseiten (Reihen vergrößert)'))}${cb('list', t('Stromkreis- und Geräteliste'))}${cb('notes', t('Hinweise aus der Prüfung und Notizen'))}
+    <div class="row" style="margin-top:14px"><button type="submit" class="pri" name="go" value="open">${t('PDF öffnen')}</button><button type="submit" name="go" value="save">${t('PDF speichern')}</button></div>`, {
+    ok: '', onOpen: f => $$('[name=go]', f).forEach(b => b.onclick = () => { f.dataset.go = b.value; }),
+    onOk: f => {
+      const v = fd(f), parts = ['overview', 'detail', 'list'].filter(k => v[k]);
+      if (!parts.length) throw new Error(t('Bitte mindestens eine Ansicht auswählen'));
+      localStorage.setItem('vs_pdf', JSON.stringify({ overview: !!v.overview, detail: !!v.detail, list: !!v.list, notes: !!v.notes }));
+      const url = q(`/api/configs/${ed.id}/pdf?parts=${parts.join(',')}&notes=${v.notes ? 1 : 0}`);
+      if (f.dataset.go === 'save') location.href = url + '&download=1'; else window.open(url, '_blank');
+    }
+  });
+}
+async function transferDialog() {
+  const profs = (await api('GET', '/api/profiles')).filter(p => p.open);
+  const groups = [];
+  for (const p of profs) { const r = await api('GET', `/api/profiles/${p.id}/configs`); groups.push([p.name, r.configs.filter(c => c.id !== ed.id)]); }
+  if (!groups.some(g => g[1].length)) { toast(t('Es gibt keine andere Konfiguration, aus der übernommen werden könnte.'), true); return; }
+  let src = null;
+  const rows = rowCount();
+  const ok = await dialog(t('Bestückung aus anderer Konfiguration übernehmen'), `<label>${t('Quelle')}</label><select name="src"><option value="">${t('– bitte wählen –')}</option>${groups.map(([n, cs]) => cs.length ? `<optgroup label="${h(n)}">${cs.map(c => `<option value="${c.id}">${h(c.name)} (${h(c.enclosure)})</option>`).join('')}</optgroup>` : '').join('')}</select>
+    <label>${t('Reihen der Quelle')}</label><div id="xrows" class="info">${t('Zuerst die Quelle wählen.')}</div>
+    <div class="two"><div><label>${t('Ziel')}</label><select name="target"><option value="same">${t('gleiche Reihennummer')}</option>${Array.from({ length: rows }, (_, i) => `<option value="${i}">${t('ab Reihe {n}', { n: i + 1 })}</option>`).join('')}</select></div>
+    <div><label>${t('Vorhandene Geräte in den Zielreihen')}</label><select name="mode"><option value="replace">${t('ersetzen')}</option><option value="append">${t('behalten, dahinter anfügen')}</option></select></div></div>
+    <div class="info">${t('Übernommen werden Geräte mit Beschriftung, Außenleiter, FI-Zuordnung, Farben und Markierungen. Reihen, die es in diesem Schrank nicht gibt, werden ausgelassen.')}</div>`, {
+    ok: t('Übernehmen'), wide: true,
+    onOpen: f => {
+      $('[name=src]', f).onchange = async ev => {
+        src = ev.target.value ? await api('GET', '/api/configs/' + ev.target.value) : null;
+        if (!src) { $('#xrows', f).innerHTML = t('Zuerst die Quelle wählen.'); return; }
+        const used = [...new Set(src.data.items.map(i => i.row))].sort((a, b) => a - b);
+        $('#xrows', f).innerHTML = used.length ? `<label class="chk"><input type="checkbox" id="xall" checked> <b>${t('alle Reihen')}</b></label>` + used.map(r => `<label class="chk"><input type="checkbox" name="row_${r}" checked> ${t('Reihe {n}', { n: r + 1 })} · ${t('{n} Geräte', { n: src.data.items.filter(i => i.row === r).length })}</label>`).join('') : t('Die Quelle enthält keine Geräte.');
+        if ($('#xall', f)) $('#xall', f).onchange = e2 => $$('[name^=row_]', f).forEach(c => c.checked = e2.target.checked);
+      };
+    },
+    onOk: f => {
+      const v = fd(f);
+      if (!src) throw new Error(t('Bitte eine Quelle wählen'));
+      const pick = [...new Set(src.data.items.map(i => i.row))].sort((a, b) => a - b).filter(r => v['row_' + r]);
+      if (!pick.length) throw new Error(t('Bitte mindestens eine Reihe auswählen'));
+      const map = new Map(pick.map((r, k) => [r, v.target === 'same' ? r : +v.target + k]));
+      const targets = [...map.values()].filter(r => r < rows);
+      if (v.mode === 'replace') {
+        const gone = new Set(ed.cfg.items.filter(i => targets.includes(i.row)).map(i => i.id));
+        ed.cfg.items = ed.cfg.items.filter(i => !gone.has(i.id));
+        ed.cfg.items.forEach(i => { if (gone.has(i.rcd_id)) i.rcd_id = ''; });
+      }
+      const ids = new Map(); const fresh = [];
+      for (const it of src.data.items) {
+        const tr = map.get(it.row); if (tr == null || tr >= rows) continue;
+        const c = JSON.parse(JSON.stringify(it)); c.id = Math.random().toString(36).slice(2, 12); c.row = tr; ids.set(it.id, c.id); fresh.push(c);
+      }
+      fresh.forEach(c => { c.rcd_id = ids.get(c.rcd_id) || ''; });
+      ed.cfg.items.push(...fresh);
+      return { n: fresh.length, skipped: pick.length - targets.length };
+    }
+  });
+  if (ok) { ed.sel = null; save(); toast(t('{n} Geräte übernommen', { n: ok.n }) + (ok.skipped ? ' · ' + t('{n} Reihen ausgelassen', { n: ok.skipped }) : '')); }
+}
 async function labelDialog() {
   const first = await api('GET', `/api/configs/${ed.id}/labels`);
   const o = first.options;
@@ -520,6 +622,17 @@ async function bmecatDialog(kind) {
   });
   if (done) { catalogCache = null; viewCatalog(kind); }
 }
+function collect(f, preview) {
+  const v = fd(f);
+  for (const k of ['width_mm', 'height_mm', 'depth_mm', 'poles', 'current_a', 'rcd_ma', 'fields', 'rows', 'te_per_row', 'row_pitch_mm']) if (k in v) v[k] = v[k] === '' ? null : parseFloat(v[k]);
+  if ('look_actuator' in v) {
+    v.look = v.look_actuator ? { actuator: v.look_actuator, actuator_pos: v.look_actuator_pos, actuator_color: v.look_actuator_color, symbol: v.look_symbol, led: v.look_led,
+      text1: v.look_text1, text2: v.look_text2, window: !!v.look_window, show_rating: !!v.look_show_rating } : null;
+    for (const k of Object.keys(v)) if (k.startsWith('look_')) delete v[k];
+  }
+  if (preview) { delete v.image; delete v.image_url; }
+  return v;
+}
 async function editCatalog(x, kind) {
   const n = !x; x = x || (kind === 'device' ? { kind, category: 'ls', width_mm: 17.5, height_mm: 85, poles: 1 } : { kind, rows: 4, fields: 1, te_per_row: 12, row_pitch_mm: 125, mount: 'AP', width_mm: 300, height_mm: 650 });
   const inp = (k, label, type = 'text', step) => `<div><label>${label}</label><input name="${k}" type="${type}" ${step ? `step="${step}"` : ''} value="${h(x[k] ?? '')}"></div>`;
@@ -532,13 +645,36 @@ async function editCatalog(x, kind) {
       <div><label>${t('Montage')}</label><select name="mount">${Object.entries(MOUNT).map(([k, v]) => `<option value="${k}" ${x.mount === k ? 'selected' : ''}>${t(v)}</option>`).join('')}</select></div>
       <div><label>${t('PE/N-Klemmenblöcke im Schrank')}</label><div class="row">${[['top', t('oben')], ['middle', t('Mitte')], ['bottom', t('unten')]].map(([k, l]) => `<label class="chk" style="margin:0"><input type="checkbox" name="pen_${k}" ${(x.pen_blocks || ['top', 'bottom']).includes(k) ? 'checked' : ''}> ${l}</label>`).join('')}</div></div>`}
     ${inp('note', t('Hinweis'))}</div>
+    ${kind === 'device' ? (() => {
+      const L = x.look || {}, sel = (name, opts, cur) => `<select name="${name}">${opts.map(([k, v]) => `<option value="${k}" ${(cur || '') === k ? 'selected' : ''}>${v}</option>`).join('')}</select>`;
+      const cols = [['grey', t('grau')], ['black', t('schwarz')], ['white', t('weiß')], ['red', t('rot')], ['blue', t('blau')], ['green', t('grün')], ['yellow', t('gelb')], ['orange', t('orange')]];
+      return `<h2>${t('Darstellung (gezeichnete Front)')}</h2><div class="designer"><div class="two" style="flex:1">
+        <div><label>${t('Bedienelement')}</label>${sel('look_actuator', [['', t('Standard nach Art')], ['lever', t('Kipphebel')], ['slide', t('kleiner Schiebeschalter')], ['button', t('Taster')], ['rotary', t('Drehschalter')], ['none', t('keins')]], L.actuator)}</div>
+        <div><label>${t('Position')}</label>${sel('look_actuator_pos', [['center', t('Mitte')], ['left', t('links')], ['right', t('rechts')]], L.actuator_pos || 'center')}</div>
+        <div><label>${t('Farbe des Bedienelements')}</label>${sel('look_actuator_color', cols, L.actuator_color || 'grey')}</div>
+        <div><label>${t('Schaltzeichen')}</label>${sel('look_symbol', [['', t('keins')], ['relay', t('Relais / Fernschalter')], ['contactor', t('Schütz')], ['timer', t('Zeitschaltuhr')], ['bell', t('Klingel')], ['transformer', t('Transformator')], ['socket', t('Steckdose')], ['lamp', t('Leuchte')]], L.symbol)}</div>
+        <div><label>${t('Anzeige-LED')}</label>${sel('look_led', [['', t('keine')], ['green', t('grün')], ['red', t('rot')], ['orange', t('orange')]], L.led)}</div>
+        <div><label>${t('Aufdruck Zeile 1')}</label><input name="look_text1" value="${h(L.text1 || '')}" placeholder="16 AX"></div>
+        <div><label>${t('Aufdruck Zeile 2')}</label><input name="look_text2" value="${h(L.text2 || '')}" placeholder="250 V~"></div>
+        <div><label class="chk" style="margin-top:22px"><input type="checkbox" name="look_window" ${L.window ? 'checked' : ''}> ${t('Beschriftungsfenster')}</label>
+          <label class="chk"><input type="checkbox" name="look_show_rating" ${L.show_rating === false ? '' : 'checked'}> ${t('Nennstrom groß anzeigen')}</label></div>
+        </div><div class="lookprev"><div id="lookprev"></div><small>${t('Vorschau')}</small></div></div>
+        <div class="info">${t('Die Einstellungen gelten für Reiheneinbaugeräte ohne eigenes Bild. Mit „Standard nach Art“ zeichnet die App wie bisher.')}</div>`;
+    })() : ''}
     ${n ? `<div class="info">${t('Ein Bild lässt sich nach dem Anlegen hinzufügen.')}</div>` : kind === 'device' ? `<h2>${t('Herstellerbild (Frontansicht)')}</h2>
       <div class="row">${x.image ? `<img class="thumb" src="/media/${h(x.image)}" alt="">` : ''}<input type="file" id="img" accept="image/*" style="flex:1"></div>
       <div class="row" style="margin-top:8px"><input id="imgurl" placeholder="${t('oder Bildadresse (https://…)')}" value="${h(x.image_url || '')}" style="flex:1"><button type="button" id="imgload">${t('Laden')}</button>${x.image ? `<button type="button" class="danger" id="imgdel">${t('Bild entfernen')}</button>` : ''}</div>
       <div class="info">${t('Das Bild wird auf die echten Gerätemaße gestreckt. Am besten eignet sich eine freigestellte, gerade Frontansicht ohne Rand.')}</div>` : ''}
     ${!n ? `<p><button type="button" class="danger" id="cdel">${t('Eintrag löschen')}</button></p>` : ''}`;
   const r = await dialog(n ? t('Eigener Katalogeintrag') : t('Katalogeintrag bearbeiten'), body, {
+    wide: true,
     onOpen: f => {
+      const prev = $('#lookprev', f);
+      if (prev) {
+        let pt = null;
+        const draw = () => { clearTimeout(pt); pt = setTimeout(async () => { try { prev.innerHTML = await api('POST', '/api/preview/device', collect(f, true)); } catch (e) { prev.textContent = e.message; } }, 150); };
+        f.addEventListener('input', draw); draw();
+      }
       const done = () => { $('#dlg').close(); catalogCache = null; viewCatalog(kind); };
       const guard = fn => async () => { try { await fn(); toast(t('Bild gespeichert')); done(); } catch (e) { toast(e.message, true); } };
       if ($('#img', f)) $('#img', f).onchange = guard(async () => { const d = new FormData(); d.append('file', $('#img', f).files[0]); await api('POST', `/api/catalog/${x.id}/image`, d, true); });
@@ -547,8 +683,7 @@ async function editCatalog(x, kind) {
       if ($('#cdel', f)) $('#cdel', f).onclick = async () => { if (confirm(t('Eintrag löschen? Bereits eingesetzte Geräte bleiben in den Konfigurationen erhalten.'))) { try { await api('DELETE', '/api/catalog/' + x.id); done(); } catch (e) { toast(e.message, true); } } };
     },
     onOk: async f => {
-      const v = fd(f);
-      for (const k of ['width_mm', 'height_mm', 'depth_mm', 'poles', 'current_a', 'rcd_ma', 'fields', 'rows', 'te_per_row', 'row_pitch_mm']) if (k in v) v[k] = v[k] === '' ? null : parseFloat(v[k]);
+      const v = collect(f);
       v.kind = kind; if (n) v.verified = true;
       if (!v.article || !(v.width_mm > 0) || !(v.height_mm > 0)) throw new Error(t('Artikel, Breite und Höhe sind erforderlich'));
       if (kind === 'enclosure' && !(v.rows > 0 && v.te_per_row > 0)) throw new Error(t('Reihen und TE je Reihe sind erforderlich'));

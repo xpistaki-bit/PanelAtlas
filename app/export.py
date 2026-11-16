@@ -2,22 +2,23 @@
 import csv
 import datetime
 import io
+import json
 import textwrap
 
 import cairosvg
 from pypdf import PdfReader, PdfWriter
 
 from .checks import run_checks, stats
-from .render import CAT_LABEL, PHASE_COLOR, TE, esc, layout, render_svg
+from .render import CAT_LABEL, LABEL_COL, PHASE_COLOR, TE, esc, layout, render_svg
 
 FONT = 'font-family="DejaVu Sans, Arial, Helvetica, sans-serif"'
 CAT_LABEL_EN = {"ls": "MCB", "rcd": "RCD", "rcbo": "RCBO", "afdd": "AFDD", "spd": "Surge protection", "switch": "Switch",
                 "terminal": "Terminal block", "hlak": "Main branch terminal", "relay": "Switching device", "meter": "Meter", "blank": "Blank", "other": "Other"}
 S = {
     "csv_head": (["Reihe", "Position", "Kennzeichnung", "Funktion", "Raum", "Hersteller", "Artikel", "Bezeichnung", "Kategorie", "Pole",
-                  "Nennstrom A", "Charakteristik", "FI mA", "Außenleiter", "Zugeordneter FI", "Breite mm", "Breite TE", "Notiz"],
+                  "Nennstrom A", "Charakteristik", "FI mA", "Außenleiter", "Zugeordneter FI", "Breite mm", "Breite TE", "Notiz", "Markierung", "Leiter je Klemme"],
                  ["Row", "Position", "Designation", "Function", "Room", "Manufacturer", "Article", "Description", "Category", "Poles",
-                  "Rated current A", "Characteristic", "RCD mA", "Phase", "Assigned RCD", "Width mm", "Width modules", "Note"]),
+                  "Rated current A", "Characteristic", "RCD mA", "Phase", "Assigned RCD", "Width mm", "Width modules", "Note", "Marker", "Wires per terminal"]),
     "csv_light": (["Reihe", "Position", "Funktion", "Raum"], ["Row", "Position", "Function", "Room"]),
     "created": ("Erstellt am {d} · Dokumentation ersetzt keine Prüfung durch eine Elektrofachkraft",
                 "Created on {d} · Documentation does not replace inspection by a qualified electrician"),
@@ -44,11 +45,16 @@ def tr(key, lang):
 
 def attach_images(con, cfg):
     """Übernimmt das aktuelle Katalogbild (Hersteller + Artikel) in die eingesetzten Geräte."""
-    imgs = {(r["manufacturer"], r["article"]): r["image"] for r in con.execute("SELECT manufacturer, article, image FROM catalog WHERE kind='device'")}
+    cat = {(r["manufacturer"], r["article"]): r for r in con.execute("SELECT manufacturer, article, image, data FROM catalog WHERE kind='device'")}
     for it in cfg.get("items", []):
-        key = (it["dev"].get("manufacturer"), it["dev"].get("article"))
-        if key in imgs:
-            it["dev"]["image"] = imgs[key]
+        r = cat.get((it["dev"].get("manufacturer"), it["dev"].get("article")))
+        if r is not None:
+            it["dev"]["image"] = r["image"]
+            look = json.loads(r["data"]).get("look")  # Darstellung folgt ebenfalls dem Katalog
+            if look:
+                it["dev"]["look"] = look
+            else:
+                it["dev"].pop("look", None)
     return cfg
 
 
@@ -67,7 +73,8 @@ def rows_table(cfg, lang="de"):
                 category=labels.get(d.get("category"), d.get("category", "")), poles=d.get("poles") or "",
                 current=d.get("current_a") or "", char=d.get("characteristic") or "", rcd_ma=d.get("rcd_ma") or "",
                 phase=it.get("phase", ""), rcd=(rcd.get("tag") or rcd["dev"].get("article", "")) if rcd else "",
-                width_mm=o["w"], width_te=round(o["w"] / TE, 2), note=it.get("note", ""), cat=d.get("category")))
+                width_mm=o["w"], width_te=round(o["w"] / TE, 2), note=it.get("note", ""), cat=d.get("category"),
+                mark=it.get("mark", ""), wires=it.get("wires", "") if d.get("category") in ("ls", "rcbo", "afdd") else ""))
     return out
 
 
@@ -88,7 +95,7 @@ def to_csv(cfg, lang="de", light=False):
         for r in rows_table(cfg, lang):
             w.writerow([r["reihe"], r["pos"], r["tag"], r["function"], r["room"], r["manufacturer"], r["article"], r["name"], r["category"],
                         r["poles"], r["current"], r["char"], r["rcd_ma"], r["phase"], r["rcd"],
-                        _num(r["width_mm"], lang), _num(r["width_te"], lang), r["note"]])
+                        _num(r["width_mm"], lang), _num(r["width_te"], lang), r["note"], r["mark"], r["wires"] or ("1" if r["cat"] in ("ls", "rcbo", "afdd") else "")])
     return ("﻿" + buf.getvalue()).encode("utf-8")
 
 
@@ -116,7 +123,7 @@ def _merge(svgs, title):
     return out.getvalue()
 
 
-def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
+def to_pdf(cfg, name, profile_name, media_dir, lang="de", parts=("overview", "detail", "list"), notes=True):
     e = cfg["enclosure"]
     W, H = float(e["width_mm"]) + 24, float(e["height_mm"]) + 24
     landscape = W > H
@@ -144,7 +151,9 @@ def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
             continue
         dev = f'{r["manufacturer"]} {r["article"]} · {r["name"]}'.strip()
         lines.append(("row", [f'{r["reihe"]}.{r["pos"]}', r["tag"], r["function"], r["room"], dev, r["phase"], r["rcd"]]))
-    checks = run_checks(cfg, lang)
+    if "list" not in parts:
+        lines = []
+    checks = run_checks(cfg, lang) if notes else []
     wrap = 118 if not landscape else 170
     if checks:
         lines.append(("head", tr("hints", lang)))
@@ -153,7 +162,7 @@ def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
             txt = f'[{mark}] {c["text"]}' + (f' ({c["norm"]})' if c["norm"] else "")
             for j, ln in enumerate(textwrap.wrap(txt, wrap)):
                 lines.append(("text", ("" if j else "• ") + ln))
-    if cfg.get("notes"):
+    if cfg.get("notes") and notes:
         lines.append(("head", tr("notes", lang)))
         for para in str(cfg["notes"]).splitlines():
             for ln in textwrap.wrap(para, wrap) or [""]:
@@ -163,7 +172,7 @@ def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
     # Detailseiten: belegte Reihen vergrößert (je Feld, 3 Reihen pro Seite, Hochformat)
     g = layout(cfg)
     details = []
-    for f in range(g["fields"]):
+    for f in range(g["fields"] if "detail" in parts else 0):
         frows = [r for r in g["rows"] if r["field"] == f]
         i = 0
         while i < len(frows):
@@ -185,10 +194,11 @@ def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
             lab = (tr("detail", lang).format(a=part[0]["idx"] + 1, b=part[-1]["idx"] + 1)
                    + (tr("field", lang).format(f=f + 1) if g["fields"] > 1 else "") + tr("scale", lang).format(s=1 / sc))
             details.append((d, lab))
-    pages = 1 + len(details) + len(chunks)
-    svgs = [_page(pw, ph, inner, title, sub, 1, pages, lang)]
+    first = 1 if "overview" in parts or not (details or chunks) else 0
+    pages = first + len(details) + len(chunks)
+    svgs = [_page(pw, ph, inner, title, sub, 1, pages, lang)] if first else []
     for n, (d, lab) in enumerate(details):
-        svgs.append(_page(210, 297, d, title, lab, n + 2, pages, lang))
+        svgs.append(_page(210, 297, d, title, lab, n + 1 + first, pages, lang))
     for n, chunk in enumerate(chunks):
         b = [f'<rect x="12" y="27" width="{pw-24}" height="7" fill="#1f2a37"/>']
         for cn, cx, cw in cols:
@@ -209,7 +219,7 @@ def to_pdf(cfg, name, profile_name, media_dir, lang="de"):
                 b.append(f'<text x="12" y="{y:.2f}" font-size="3.6" font-weight="700" fill="#111">{esc(val)}</text>')
             else:
                 b.append(f'<text x="13" y="{y:.2f}" font-size="2.8" fill="#222">{esc(val)}</text>')
-        svgs.append(_page(pw, ph, "".join(b), title, tr("list", lang), n + 2 + len(details), pages, lang))
+        svgs.append(_page(pw, ph, "".join(b), title, tr("list", lang), n + 1 + first + len(details), pages, lang))
     return _merge(svgs, title)
 
 
@@ -252,7 +262,8 @@ def _label_cell(it, x, y, w, h, o):
     s = []
     frame = {"solid": 'stroke="#000" stroke-width="0.2"', "dashed": 'stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"',
              "thick": 'stroke="#000" stroke-width="0.6"', "none": 'stroke="none"'}.get(o["frame"], 'stroke="#000" stroke-width="0.2"')
-    s.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="#fff" {frame}/>')
+    bg, fg = LABEL_COL.get(it.get("label_color") or "", ("#fff", "#000"))
+    s.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="{bg}" {frame}/>')
     top = 0.0
     if o["phase"] and it.get("phase") in PHASE_COLOR:
         s.append(f'<rect x="{x+0.3:.2f}" y="{y+0.3:.2f}" width="{w-0.6:.2f}" height="1.6" fill="{PHASE_COLOR[it["phase"]]}"/>')
@@ -289,7 +300,7 @@ def _label_cell(it, x, y, w, h, o):
             lines = [(ln, "400") for ln in _wrap_w(joined, avail_len, size)][:mx]
         x0 = x + w / 2 - (len(lines) - 1) * lh / 2 + size * 0.35
         for i, (ln, wt) in enumerate(lines):
-            s.append(f'<text transform="translate({x0+i*lh:.2f} {y+h-1.2:.2f}) rotate(-90)" font-size="{size:.2f}" font-weight="{wt}" fill="#000">{esc(ln)}</text>')
+            s.append(f'<text transform="translate({x0+i*lh:.2f} {y+h-1.2:.2f}) rotate(-90)" font-size="{size:.2f}" font-weight="{wt}" fill="{fg}">{esc(ln)}</text>')
     else:
         lines = []
         for txt, wt in parts:
@@ -299,7 +310,7 @@ def _label_cell(it, x, y, w, h, o):
         lines = lines[:mx]
         y0 = y + top + (h - top - len(lines) * lh) / 2 + size
         for i, (ln, wt) in enumerate(lines):
-            s.append(f'<text x="{x+w/2:.2f}" y="{y0+i*lh:.2f}" font-size="{size:.2f}" font-weight="{wt}" text-anchor="middle" fill="#000">{esc(ln)}</text>')
+            s.append(f'<text x="{x+w/2:.2f}" y="{y0+i*lh:.2f}" font-size="{size:.2f}" font-weight="{wt}" text-anchor="middle" fill="{fg}">{esc(ln)}</text>')
     return "".join(s)
 
 

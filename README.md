@@ -102,11 +102,19 @@ docker run -d --name panelatlas --restart unless-stopped -p 8080:8080 -v verteil
 - **Label:** designation, function and room per device. The label is shown below the device, in the printout
   and in the CSV. The label font size is adjustable per configuration (enclosure tab, 100 % to 200 %) and
   applies to the view and the PDF.
+- **Mark:** a placed device can get a bright marker (red, yellow, magenta, cyan), for example when it causes
+  trouble or its purpose is unclear. The label field can be coloured in twelve colours. For breakers, "2 wires"
+  adds a `2×` marker on the device.
+- **Phases:** breakers placed after a 3- or 4-pole RCD are assigned to L1, L2, L3 in turn (3-pole breakers get
+  L1-L3). The option is on by default and can be switched off per RCD.
+- **Copy from another configuration:** the enclosure tab has "Copy devices from …". Choose the source, all
+  rows or single rows, the target rows and whether existing devices are replaced or kept.
 - **Check:** overfilled rows are errors. Standards notes (DIN VDE 0100-410/-443/-530, DIN 18015) never block
   anything; each one can be ticked as a deliberate deviation and is then printed as such. The notes can be
   switched off per configuration.
-- **Output:** PDF (overview, enlarged detail pages, circuit list, notes), CSV (all columns), **CSV light**
-  (row, position, function, room only), SVG and JSON.
+- **Output:** PDF, CSV (all columns), **CSV light** (row, position, function, room only), SVG and JSON. "Print
+  / PDF" asks what the PDF should contain: overview, enlarged detail pages, circuit list, and check results
+  with notes.
 
 ### Meters
 
@@ -119,7 +127,8 @@ the check reports an error.
 
 Most enclosures carry PE and N terminal blocks at the top, at the bottom or in the middle. They are drawn in
 the enclosure view (green PE, blue N). The positions are set per enclosure in the catalog and can be changed
-per configuration in the enclosure tab. The default is top and bottom.
+per configuration in the enclosure tab. The default is top and bottom. A block can also be clicked in the view
+and removed with the Delete key.
 
 ### Label strips
 
@@ -172,6 +181,12 @@ None of the manufacturers offers a freely accessible online interface. The files
   customer account "My Phoenix Contact".
 - **ABB / Striebel & John:** BMEcat with ETIM as a download in the ABB library.
 - **Hager, Schneider Electric, DEHN:** via customer portal, wholesaler or on request.
+
+### Device graphics
+
+How a device is drawn depends on its type; a small designer in the catalog entry sets the actuator, circuit
+symbol, print and label window, and an image replaces the drawing. See
+[docs/device-graphics.md](docs/device-graphics.md).
 
 ### Manufacturer images
 

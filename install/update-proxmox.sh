@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
-# Aktualisiert die App in einem bestehenden Container. Daten in /var/lib/verteiler bleiben erhalten.
-# Auf dem Proxmox-Host als root, direkt von GitHub:
+# Updates the app in an existing container. Data in /var/lib/verteiler is kept.
+# On the Proxmox host as root, straight from GitHub:
 #   CTID=109 bash -c "$(curl -fsSL https://raw.githubusercontent.com/xpistaki-bit/PanelAtlas/main/install/update-proxmox.sh)"
-# oder aus dem entpackten Paket:
+# or from the unpacked repository:
 #   CTID=109 bash install/update-proxmox.sh
 set -euo pipefail
-: "${CTID:?Bitte CTID=<Container-ID> angeben}"
-command -v pct >/dev/null || { echo "Dieses Skript muss auf dem Proxmox-Host laufen (pct fehlt)."; exit 1; }
+: "${CTID:?Please pass CTID=<container id>}"
+command -v pct >/dev/null || { echo "This script must run on the Proxmox host (pct not found)."; exit 1; }
 REPO="${REPO:-xpistaki-bit/PanelAtlas}"
 BRANCH="${BRANCH:-main}"
-# Quelle: das entpackte Paket neben diesem Skript – oder, beim Aufruf per curl, ein Download von GitHub.
+# Source: the unpacked repository next to this script, or a download from GitHub when run via curl.
 SELF="${BASH_SOURCE[0]:-}"
 if [ -n "$SELF" ] && [ -f "$SELF" ] && [ -d "$(dirname "$SELF")/../app" ]; then
   SRC="$(cd "$(dirname "$SELF")/.." && pwd)"
 else
   SRC="$(mktemp -d /tmp/verteiler-src-XXXXXX)"
   URL="https://github.com/${REPO}/archive/refs/heads/${BRANCH}.tar.gz"
-  echo "==> Lade $URL"
+  echo "==> Downloading $URL"
   if command -v curl >/dev/null; then curl -fsSL "$URL" -o "$SRC/src.tar.gz"; else wget -qO "$SRC/src.tar.gz" "$URL"; fi
   tar -xzf "$SRC/src.tar.gz" -C "$SRC" --strip-components=1 && rm -f "$SRC/src.tar.gz"
-  [ -d "$SRC/app" ] || { echo "Download unvollständig: $URL"; exit 1; }
+  [ -d "$SRC/app" ] || { echo "Download incomplete: $URL"; exit 1; }
 fi
 TMP="$(mktemp /tmp/verteiler-XXXXXX.tar.gz)"
 tar -C "$SRC" --exclude=data --exclude=__pycache__ --exclude=.git -czf "$TMP" .

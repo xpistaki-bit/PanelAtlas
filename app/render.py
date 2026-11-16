@@ -12,6 +12,12 @@ CAT_LABEL = {"ls": "LS-Schalter", "rcd": "FI-Schalter", "rcbo": "FI/LS", "afdd":
 MODULAR = {"ls", "rcd", "rcbo", "afdd", "spd", "switch", "relay", "other", "blank"}
 HL_COL = {"gr": "#8f9499", "": "#8f9499", "bl": "#2f6fd0", "blue": "#2f6fd0", "pe": "#3f9b3f", "br": "#7a4a22", "brown": "#7a4a22", "sw": "#2a2a2a", "black": "#2a2a2a"}
 PEN_DEFAULT = ("top", "bottom")
+ACT_COL = {"black": "#2b2b2b", "grey": "#7a7f85", "white": "#f7f7f7", "red": "#c62828", "blue": "#1e63b5", "green": "#2e9e3f", "yellow": "#f2c200", "orange": "#f57c00"}
+MARK_COL = {"red": "#ff1744", "yellow": "#ffea00", "magenta": "#ff00e5", "cyan": "#00e5ff"}
+# Hintergrund / Schriftfarbe der Beschriftungsfelder
+LABEL_COL = {"yellow": ("#fff176", "#111"), "orange": ("#ffb74d", "#111"), "red": ("#e53935", "#fff"), "pink": ("#f48fb1", "#111"), "purple": ("#8e44ad", "#fff"),
+             "blue": ("#1e88e5", "#fff"), "lightblue": ("#90caf9", "#111"), "cyan": ("#4dd0e1", "#111"), "green": ("#43a047", "#fff"), "lime": ("#dce775", "#111"),
+             "brown": ("#8d6e63", "#fff"), "grey": ("#cfd8dc", "#111")}
 PHASE_COLOR = {"L1": "#8b5a2b", "L2": "#222222", "L3": "#777777", "L1-L3": "#b0452c"}
 
 
@@ -162,6 +168,11 @@ def _device(o, media_dir, embed):
     rating = ""
     if d.get("current_a"):
         rating = f'{d.get("characteristic") or ""}{d["current_a"]:g}' + ("" if d.get("characteristic") else " A")
+    look = d.get("look")
+    if isinstance(look, dict) and look.get("actuator"):
+        s.append(_look(look, x, cy, w, rating))
+        s.append(f'<text x="{x+w/2:.2f}" y="{cy+CAP/2-1.6:.2f}" font-size="2.4" text-anchor="middle" fill="#555">{esc(_fit(d.get("article", ""), w-1, 2.4))}</text>')
+        return "".join(s)
     if cat in ("ls", "rcbo", "afdd", "switch", "relay", "other"):
         lw = min(w - 5, 9 if poles == 1 or w < 30 else w - 8)
         lever = {"ls": "#2b2b2b", "rcbo": "#2b2b2b", "afdd": "#2b2b2b", "switch": "#c62828", "relay": "#666", "other": "#666"}[cat]
@@ -186,6 +197,104 @@ def _device(o, media_dir, embed):
         s.append(f'<text x="{x+w/2:.2f}" y="{cy+CAP/2-5.4:.2f}" font-size="3" text-anchor="middle" fill="#222" font-weight="700">SPD</text>')
     s.append(f'<text x="{x+w/2:.2f}" y="{cy+CAP/2-1.6:.2f}" font-size="2.4" text-anchor="middle" fill="#555">{esc(_fit(d.get("article", ""), w-1, 2.4))}</text>')
     return "".join(s)
+
+
+def _symbol(kind, cx, cy, z):
+    """Kleines Schaltzeichen, Mittelpunkt (cx, cy), Größe z."""
+    st = 'fill="none" stroke="#333" stroke-width="0.35" stroke-linecap="round"'
+    h = z / 2
+    if kind in ("relay", "contactor"):
+        o = (f'<rect x="{cx-h:.2f}" y="{cy-h*0.35:.2f}" width="{z*0.42:.2f}" height="{h*0.7:.2f}" {st}/>'
+             f'<path d="M{cx-h+z*0.21:.2f} {cy-h:.2f}V{cy-h*0.35:.2f}M{cx-h+z*0.21:.2f} {cy+h*0.35:.2f}V{cy+h:.2f}" {st}/>'
+             f'<path d="M{cx+h*0.55:.2f} {cy-h:.2f}V{cy-h*0.4:.2f}M{cx+h*0.55:.2f} {cy+h:.2f}V{cy+h*0.4:.2f}L{cx+h*0.05:.2f} {cy-h*0.35:.2f}" {st}/>'
+             f'<path d="M{cx-h+z*0.42:.2f} {cy:.2f}H{cx+h*0.3:.2f}" {st} stroke-dasharray="0.6 0.5"/>')
+        if kind == "contactor":
+            o += f'<path d="M{cx+h:.2f} {cy-h:.2f}V{cy-h*0.4:.2f}M{cx+h:.2f} {cy+h:.2f}V{cy+h*0.4:.2f}L{cx+h*0.5:.2f} {cy-h*0.35:.2f}" {st}/>'
+        return o
+    if kind == "timer":
+        return f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{h*0.9:.2f}" {st}/><path d="M{cx:.2f} {cy-h*0.55:.2f}V{cy:.2f}L{cx+h*0.4:.2f} {cy+h*0.25:.2f}" {st}/>'
+    if kind == "bell":
+        return (f'<path d="M{cx-h*0.8:.2f} {cy+h*0.45:.2f}H{cx+h*0.8:.2f}M{cx-h*0.6:.2f} {cy+h*0.45:.2f}A{h*0.6:.2f} {h*0.95:.2f} 0 0 1 {cx+h*0.6:.2f} {cy+h*0.45:.2f}" {st}/>'
+                f'<circle cx="{cx:.2f}" cy="{cy+h*0.7:.2f}" r="{h*0.14:.2f}" fill="#333"/>')
+    if kind == "transformer":
+        return f'<circle cx="{cx:.2f}" cy="{cy-h*0.3:.2f}" r="{h*0.55:.2f}" {st}/><circle cx="{cx:.2f}" cy="{cy+h*0.3:.2f}" r="{h*0.55:.2f}" {st}/>'
+    if kind == "socket":
+        return (f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{h*0.9:.2f}" {st}/><circle cx="{cx-h*0.35:.2f}" cy="{cy:.2f}" r="{h*0.13:.2f}" fill="#333"/>'
+                f'<circle cx="{cx+h*0.35:.2f}" cy="{cy:.2f}" r="{h*0.13:.2f}" fill="#333"/>')
+    if kind == "lamp":
+        return f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{h*0.85:.2f}" {st}/><path d="M{cx-h*0.6:.2f} {cy-h*0.6:.2f}L{cx+h*0.6:.2f} {cy+h*0.6:.2f}M{cx+h*0.6:.2f} {cy-h*0.6:.2f}L{cx-h*0.6:.2f} {cy+h*0.6:.2f}" {st}/>'
+    return ""
+
+
+def _look(look, x, cy, w, rating):
+    """Frei gestaltete Front eines Reiheneinbaugeräts (Katalog → Darstellung)."""
+    s = []
+    col = ACT_COL.get(look.get("actuator_color") or "grey", "#7a7f85")
+    edge = "#888" if col == "#f7f7f7" else "none"
+    pos = look.get("actuator_pos") or "center"
+    off = min(5.0, w * 0.27)
+    ax = {"left": x + off, "right": x + w - off}.get(pos, x + w / 2)
+    act = look.get("actuator")
+    t1, t2 = str(look.get("text1") or ""), str(look.get("text2") or "")
+    if t1:
+        s.append(f'<text x="{x+w/2:.2f}" y="{cy-CAP/2+7.2:.2f}" font-size="2.3" text-anchor="middle" fill="#222" font-weight="700">{esc(_fit(t1, w-1, 2.3))}</text>')
+    if t2:
+        s.append(f'<text x="{x+w/2:.2f}" y="{cy-CAP/2+10:.2f}" font-size="2.1" text-anchor="middle" fill="#333">{esc(_fit(t2, w-1, 2.1))}</text>')
+    ay = cy - 1.5
+    if act == "lever":
+        lw = min(w - 5, 9) if pos == "center" else min(w * 0.4, 7)
+        s.append(f'<rect x="{ax-lw/2:.2f}" y="{ay-6:.2f}" width="{lw:.2f}" height="11" rx="1" fill="{col}" stroke="{edge}" stroke-width="0.25"/>')
+    elif act == "slide":
+        s.append(f'<rect x="{ax-2.2:.2f}" y="{ay-6.5:.2f}" width="4.4" height="13" rx="0.6" fill="#e2e2dd" stroke="#8a8a84" stroke-width="0.25"/>')
+        s.append(f'<rect x="{ax-1.6:.2f}" y="{ay-5.9:.2f}" width="3.2" height="6" rx="0.5" fill="{col}" stroke="{edge}" stroke-width="0.25"/>')
+        tx = ax + 3.6 if pos != "right" else ax - 3.6
+        s.append(f'<text x="{tx:.2f}" y="{ay-3.6:.2f}" font-size="2.2" text-anchor="middle" fill="#333">I</text><text x="{tx:.2f}" y="{ay+6:.2f}" font-size="2.2" text-anchor="middle" fill="#333">0</text>')
+    elif act == "button":
+        s.append(f'<circle cx="{ax:.2f}" cy="{ay:.2f}" r="3.4" fill="{col}" stroke="#555" stroke-width="0.3"/>')
+    elif act == "rotary":
+        s.append(f'<circle cx="{ax:.2f}" cy="{ay:.2f}" r="4.2" fill="#e2e2dd" stroke="#666" stroke-width="0.3"/><rect x="{ax-0.9:.2f}" y="{ay-4:.2f}" width="1.8" height="8" rx="0.6" fill="{col}" stroke="{edge}" stroke-width="0.2"/>')
+    sym = look.get("symbol")
+    centered = pos == "center" and act != "none"
+    if sym:
+        z = min(8.0, w * 0.42)
+        if centered:
+            s.append(_symbol(sym, x + w / 2, cy + 8.5, min(z, 6.5)))
+        else:
+            sx = x + w - off - 0.6 if pos == "left" else (x + off + 0.6 if pos == "right" else x + w / 2)
+            s.append(_symbol(sym, sx, ay, z))
+    if rating and look.get("show_rating", True) and not (sym and centered):
+        s.append(f'<text x="{x+w/2:.2f}" y="{cy+9:.2f}" font-size="{5 if w > 30 else 3.2}" text-anchor="middle" font-weight="700" fill="#111">{esc(rating)}</text>')
+    if look.get("window"):
+        s.append(f'<rect x="{x+2:.2f}" y="{cy+10.6:.2f}" width="{w-4:.2f}" height="8" rx="0.8" fill="#bfe6e8" fill-opacity="0.85" stroke="#6fb0b6" stroke-width="0.3"/>')
+    led = look.get("led")
+    if led in ACT_COL:
+        s.append(f'<circle cx="{x+w-3.2:.2f}" cy="{cy-CAP/2+6.4:.2f}" r="1.3" fill="{ACT_COL[led]}" stroke="#555" stroke-width="0.2"/>')
+    return "".join(s)
+
+
+def _overlay(o):
+    """Markierungen je eingesetztem Gerät: Signalfarbe und Kennzeichen für zwei angeschlossene Leiter."""
+    it, x, y, w, h = o["item"], o["x"], o["y"], o["w"], o["h"]
+    s = []
+    if str(it.get("wires") or "1") == "2" and it["dev"].get("category") in ("ls", "rcbo", "afdd"):
+        bx, by = x + w / 2, y + h - (h - CAP) / 4
+        s.append(f'<rect x="{bx-4.6:.2f}" y="{by-2.6:.2f}" width="9.2" height="5.2" rx="1.2" fill="#ff9100" stroke="#8a4b00" stroke-width="0.3"/>'
+                 f'<text x="{bx:.2f}" y="{by+1.35:.2f}" font-size="3.6" text-anchor="middle" font-weight="700" fill="#111">2×</text>')
+    mc = MARK_COL.get(it.get("mark") or "")
+    if mc:
+        s.append(f'<rect x="{x+0.8:.2f}" y="{y+0.8:.2f}" width="{w-1.6:.2f}" height="{h-1.6:.2f}" rx="1" fill="{mc}" fill-opacity="0.22" stroke="{mc}" stroke-width="1.6"/>'
+                 f'<path d="M{x+w-0.8:.2f} {y+0.8:.2f}v{min(9, w*0.5):.2f}l-{min(9, w*0.5):.2f} -{min(9, w*0.5):.2f}z" fill="{mc}" stroke="#222" stroke-width="0.2"/>')
+    return "".join(s)
+
+
+def device_preview_svg(dev, media_dir=None):
+    """Einzelnes Gerät als SVG (Vorschau im Katalog)."""
+    w, h = float(dev.get("width_mm") or TE), float(dev.get("height_mm") or 85)
+    o = dict(item=dict(dev=dev, id="p"), x=4.0, w=w, h=h, y=4.0, cy=4.0 + h / 2)
+    body = _device(o, media_dir or "/nonexistent", False)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w+8:.2f} {h+8:.2f}" '
+            f'font-family="DejaVu Sans, Arial, Helvetica, sans-serif"><rect width="{w+8:.2f}" height="{h+8:.2f}" fill="#ecece6"/>'
+            f'<rect x="0" y="{4+h/2-17.5:.2f}" width="{w+8:.2f}" height="35" fill="#c9ccd0"/>{body}</svg>')
 
 
 def _meter(d, x, y, w, h):
@@ -259,23 +368,23 @@ def pen_blocks_svg(cfg, g):
     if not pos:
         return "", None
     H, pitch, fw, n = g["H"], g["pitch"], g["field_w"], g["n_rows"]
-    out, bottom_y = [], None
+    out, bottom_y = {"top": [], "middle": [], "bottom": []}, None
     for f in range(g["fields"]):
         first, last = g["rows"][f * n], g["rows"][f * n + n - 1]
         x0, rw = first["x0"], first["width"]
         half = rw / 2 - 3
         if "top" in pos:
             y = max(9.0, first["cy"] - 45 - 8 - 14)
-            out.append(_pen_bar(x0, y, half, 14, "pe") + _pen_bar(x0 + rw - half, y, half, 14, "n"))
+            out["top"].append(_pen_bar(x0, y, half, 14, "pe") + _pen_bar(x0 + rw - half, y, half, 14, "n"))
         if "bottom" in pos:
             bottom_y = min(H - 9 - 14, last["cy"] + pitch / 2 + 4)
-            out.append(_pen_bar(x0, bottom_y, half, 14, "pe") + _pen_bar(x0 + rw - half, bottom_y, half, 14, "n"))
+            out["bottom"].append(_pen_bar(x0, bottom_y, half, 14, "pe") + _pen_bar(x0 + rw - half, bottom_y, half, 14, "n"))
         if "middle" in pos:
             margin = x0 - f * fw
             if margin >= 26:
                 ln = min(140.0, H - 60)
-                out.append(_pen_bar(f * fw + 10, H / 2 - ln / 2, 12, ln, "pe", True) + _pen_bar((f + 1) * fw - 22, H / 2 - ln / 2, 12, ln, "n", True))
-    return '<g class="pen" pointer-events="none">' + "".join(out) + "</g>", bottom_y
+                out["middle"].append(_pen_bar(f * fw + 10, H / 2 - ln / 2, 12, ln, "pe", True) + _pen_bar((f + 1) * fw - 22, H / 2 - ln / 2, 12, ln, "n", True))
+    return "".join(f'<g class="pen" data-pen="{k}">{"".join(v)}</g>' for k, v in out.items() if v), bottom_y
 
 
 def _label(o, y0, sh, k=1.0):
@@ -285,7 +394,8 @@ def _label(o, y0, sh, k=1.0):
     tag, fn, room = it.get("tag", ""), it.get("function", ""), it.get("room", "")
     if cat == "blank" or not (tag or fn or room):
         return ""
-    s = [f'<rect x="{x+0.3:.2f}" y="{y0:.2f}" width="{w-0.6:.2f}" height="{sh:.2f}" fill="#fff" stroke="#9a9a94" stroke-width="0.2"/>']
+    bg, fg = LABEL_COL.get(it.get("label_color") or "", ("#fff", "#111"))
+    s = [f'<rect x="{x+0.3:.2f}" y="{y0:.2f}" width="{w-0.6:.2f}" height="{sh:.2f}" fill="{bg}" stroke="#9a9a94" stroke-width="0.2"/>']
     ph = it.get("phase")
     if ph in PHASE_COLOR:
         s.append(f'<rect x="{x+0.3:.2f}" y="{y0:.2f}" width="{w-0.6:.2f}" height="1.4" fill="{PHASE_COLOR[ph]}"/>')
@@ -294,7 +404,7 @@ def _label(o, y0, sh, k=1.0):
         yy = y0 + 2.2 + 4.2 * k
         for txt, size, wt in lines:
             if txt and yy < y0 + sh:
-                s.append(f'<text x="{x+w/2:.2f}" y="{yy:.2f}" font-size="{size:.2f}" text-anchor="middle" font-weight="{wt}" fill="#111">{esc(_fit(txt, w-2, size))}</text>')
+                s.append(f'<text x="{x+w/2:.2f}" y="{yy:.2f}" font-size="{size:.2f}" text-anchor="middle" font-weight="{wt}" fill="{fg}">{esc(_fit(txt, w-2, size))}</text>')
                 yy += size + 1.6
     else:
         cols = [(tag, "700"), (fn, "400"), (room, "400")]
@@ -305,7 +415,7 @@ def _label(o, y0, sh, k=1.0):
         size = min((3.1 if w >= 15 else 2.6) * k, step * 0.8)
         for i, (txt, wt) in enumerate(cols):
             cx = x + 0.5 + step * (i + 0.5) + size * 0.35
-            s.append(f'<text transform="translate({cx:.2f} {y0+sh-1.2:.2f}) rotate(-90)" font-size="{size:.2f}" font-weight="{wt}" fill="#111">{esc(_fit(txt, sh-3, size))}</text>')
+            s.append(f'<text transform="translate({cx:.2f} {y0+sh-1.2:.2f}) rotate(-90)" font-size="{size:.2f}" font-weight="{wt}" fill="{fg}">{esc(_fit(txt, sh-3, size))}</text>')
     return "".join(s)
 
 
@@ -361,6 +471,7 @@ def render_svg(cfg, media_dir, embed=False, standalone=True, crop=None):
             it = o["item"]
             s.append(f'<g class="item" data-id="{esc(it["id"])}" data-row="{row["idx"]}" data-x="{o["x"]:.2f}" data-w="{o["w"]:.2f}">')
             s.append(_device(o, media_dir, embed))
+            s.append(_overlay(o))
             s.append("</g>")
         if cover and has_mod and row["blocked_by"] is None and not row["span"]:
             ya, yb = cy - pitch / 2 + 1.5, cy + pitch / 2 - 1.5

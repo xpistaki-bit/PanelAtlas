@@ -117,10 +117,12 @@ if hager_ok("KH35L3"):
     dev("Hager", "Hauptleitungsabzweigklemme", "KH35L3", "Hauptleitungsabzweigklemme 3-polig, 35 mm², 100 A", "hlak", width_mm=71, height_mm=55, poles=3, current_a=100)
 if hager_ok("KH35N"):
     dev("Hager", "Hauptleitungsabzweigklemme", "KH35N", "Hauptleitungsabzweigklemme 1-polig N, blau, 100 A", "hlak", width_mm=27, height_mm=55, poles=1, current_a=100, color="blue")
+RELAY_LOOK = dict(actuator="slide", actuator_pos="left", actuator_color="white", symbol="relay", window=True, text1="16 AX", text2="250 V~", show_rating=False)
 if hager_ok("EPN510"):
-    dev("Hager", "Schaltgeräte", "EPN510", "Fernschalter (Stromstoß) 1 Schließer, 230 V, 16 A", "relay", te=1, current_a=16)
+    dev("Hager", "Schaltgeräte", "EPN510", "Fernschalter (Stromstoß) 1 Schließer, 230 V, 16 A", "relay", te=1, current_a=16, look=RELAY_LOOK)
 if hager_ok("ESC225"):
-    dev("Hager", "Schaltgeräte", "ESC225", "Installationsschütz 25 A, 2 Schließer, 230 V", "relay", te=1, poles=2, current_a=25, verified=False, note="Breite bitte prüfen")
+    dev("Hager", "Schaltgeräte", "ESC225", "Installationsschütz 25 A, 2 Schließer, 230 V", "relay", te=1, poles=2, current_a=25, verified=False, note="Breite bitte prüfen",
+        look=dict(actuator="none", symbol="contactor", window=True, text1="25 A", text2="230 V~", show_rating=False))
 
 # ABB (Typbezeichnungen; Maße nach DIN 43880, nicht einzeln gegen Katalog geprüft)
 for ch in ("B", "C"):

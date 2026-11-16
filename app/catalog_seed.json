@@ -2240,7 +2240,17 @@
    "rcd_type": "",
    "color": "",
    "verified": true,
-   "note": ""
+   "note": "",
+   "look": {
+    "actuator": "slide",
+    "actuator_pos": "left",
+    "actuator_color": "white",
+    "symbol": "relay",
+    "window": true,
+    "text1": "16 AX",
+    "text2": "250 V~",
+    "show_rating": false
+   }
   }
  },
  {
@@ -2260,7 +2270,15 @@
    "rcd_type": "",
    "color": "",
    "verified": false,
-   "note": "Breite bitte prüfen"
+   "note": "Breite bitte prüfen",
+   "look": {
+    "actuator": "none",
+    "symbol": "contactor",
+    "window": true,
+    "text1": "25 A",
+    "text2": "230 V~",
+    "show_rating": false
+   }
   }
  },
  {

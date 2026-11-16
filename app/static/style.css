@@ -135,3 +135,13 @@ dialog.wide{min-width:min(1040px,95vw);max-width:95vw}
 .lblprev svg{width:100%;height:auto;display:block;box-shadow:0 1px 6px rgba(0,0,0,.2)}
 .btn.pri{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
 @media (max-width:900px){.lblgrid{grid-template-columns:1fr}}
+
+.sw{display:flex;flex-wrap:wrap;gap:5px}
+.swb{width:26px;height:26px;padding:0;border-radius:6px;border:1px solid rgba(0,0,0,.35);justify-content:center}
+.swb.none{background:#fff;color:var(--mute);font-size:15px}
+.swb.on{outline:3px solid var(--ink);outline-offset:1px}
+.canvas .pen{cursor:pointer}
+.canvas .pen.sel{filter:drop-shadow(0 0 1.2px #ff6a00) drop-shadow(0 0 1.2px #ff6a00)}
+.designer{display:flex;gap:16px;align-items:flex-start}
+.lookprev{flex:none;width:120px;text-align:center;color:var(--mute)}
+.lookprev svg{width:100%;height:auto;max-height:300px;border:1px solid var(--line);border-radius:6px}

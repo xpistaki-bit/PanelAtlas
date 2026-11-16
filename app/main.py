@@ -20,7 +20,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
 
-from . import backup, catalog_io, export
+from . import backup, catalog_io, export, render
 from .checks import run_checks, stats
 from .render import render_svg
 
@@ -57,11 +57,19 @@ def init():
         CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT);
         CREATE TABLE IF NOT EXISTS grants(token TEXT, profile_id INTEGER, created REAL);
         """)
-        have = {(r["kind"], r["manufacturer"], r["article"]) for r in c.execute("SELECT kind, manufacturer, article FROM catalog")}
+        have = {(r["kind"], r["manufacturer"], r["article"]): r for r in c.execute("SELECT id, kind, manufacturer, article, data, custom FROM catalog")}
         for e in json.loads((BASE / "catalog_seed.json").read_text()):
-            if (e["kind"], e["manufacturer"], e["article"]) not in have:
+            old = have.get((e["kind"], e["manufacturer"], e["article"]))
+            if old is None:
                 c.execute("INSERT INTO catalog(kind, manufacturer, series, article, name, data, custom) VALUES(?,?,?,?,?,?,0)",
                           (e["kind"], e["manufacturer"], e["series"], e["article"], e["name"], json.dumps(e["data"], ensure_ascii=False)))
+            elif not old["custom"]:
+                # neue Felder des Startkatalogs nachtragen, ohne eigene Änderungen zu überschreiben
+                data = json.loads(old["data"])
+                add = {k: v for k, v in e["data"].items() if k not in data}
+                if add:
+                    data.update(add)
+                    c.execute("UPDATE catalog SET data=? WHERE id=?", (json.dumps(data, ensure_ascii=False), old["id"]))
 
 
 init()
@@ -329,11 +337,12 @@ def _fname(name, ext):
 
 
 @app.get("/api/configs/{cid}/pdf")
-def config_pdf(cid: int, request: Request, download: int = 0):
+def config_pdf(cid: int, request: Request, download: int = 0, parts: str = "overview,detail,list", notes: int = 1):
     with db() as c:
         r, p = load_config(c, request, cid)
         cfg = export.attach_images(c, json.loads(r["data"]))
-    pdf = export.to_pdf(cfg, r["name"], p["name"], MEDIA, lang_of(request))
+    sel = tuple(x for x in parts.split(",") if x in ("overview", "detail", "list")) or ("overview",)
+    pdf = export.to_pdf(cfg, r["name"], p["name"], MEDIA, lang_of(request), parts=sel, notes=bool(notes))
     disp = "attachment" if download else "inline"
     return Response(pdf, media_type="application/pdf", headers={"Content-Disposition": f'{disp}; filename="{_fname(r["name"], "pdf")}"'})
 
@@ -386,6 +395,18 @@ def catalog(kind: str = ""):
 
 
 CAT_FIELDS = ("kind", "manufacturer", "series", "article", "name")
+
+
+@app.post("/api/preview/device")
+def preview_device(body: dict = Body(...)):
+    """SVG-Vorschau eines Geräts für den Darstellungs-Editor im Katalog."""
+    try:
+        dev = dict(body)
+        dev["width_mm"] = min(400.0, max(2.0, float(dev.get("width_mm") or 17.5)))
+        dev["height_mm"] = min(400.0, max(10.0, float(dev.get("height_mm") or 85)))
+        return Response(render.device_preview_svg(dev, MEDIA), media_type="image/svg+xml")
+    except (TypeError, ValueError):
+        raise HTTPException(400, "Ungültige Gerätedaten")
 
 
 @app.post("/api/catalog")
