@@ -190,6 +190,7 @@ None of the manufacturers offers a freely accessible online interface. The files
 How a device is drawn depends on its type; a small designer in the catalog entry sets the actuator, circuit
 symbol, print and label window, and an image replaces the drawing. See
 [docs/device-graphics.md](docs/device-graphics.md).
+<img width="2060" height="2064" alt="Katalog" src="https://github.com/user-attachments/assets/02c18411-8720-4d8c-afd4-d24ce4367f9d" />
 
 ### Manufacturer images
 
@@ -201,6 +202,8 @@ image is stretched to the real device dimensions; without an image the app draws
 
 Targets are configured under **Settings**. Each backup is a ZIP file with all profiles, configurations, own
 catalog entries, images, and a PDF and CSV per configuration.
+<img width="2138" height="1020" alt="backup" src="https://github.com/user-attachments/assets/21073ea6-2edf-479e-a9c3-529a1aea98e2" />
+
 
 - **Folder / NAS:** a path in the container, for example a directory mounted from Proxmox
   (`pct set <CTID> -mp0 /mnt/pve/nas/verteiler,mp=/mnt/sicherung`) or a Docker volume. The user `verteiler`
