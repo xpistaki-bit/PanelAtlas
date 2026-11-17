@@ -7,6 +7,9 @@ German and English (switch at the top right).
 
 The standards notes in the app are a plausibility aid. They do not replace planning or inspection by a
 qualified electrician.
+<img width="1138" height="1544" alt="Verteilerkasten1" src="https://github.com/user-attachments/assets/50d5793e-5391-4254-b447-612c4ab1e4de" />
+
+<img width="1632" height="1460" alt="Device_configuration" src="https://github.com/user-attachments/assets/42ed4886-d7f0-472e-831e-edc34057916d" />
 
 ## Installation
 
